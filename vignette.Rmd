@@ -16,50 +16,234 @@ knitr::opts_chunk$set(
 )
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+In this vignettes document, we will demonstrate how to create a S3 vectors using R package `vctrs`, so make you already install `vctrs` package before moving forward.
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+```{r}
+#install.packages("vctrs")
+library(vctrs)
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
+# Use vctrs to create a new vector class.
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+- `new_vctr()`   : create a new vctrs class.
+- `vec_assert()` : to checks types and/or sizes
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+# testing class
+```{r}
+testing <- function(x = double()) {
+  vec_assert(x, double())
+  new_vctr(x, class = "testing")
+}
+```
+```{r}
+x <- testing(c(1,2,3,4,NA))
+x
+str(x)
 ```
 
-Also a quote using `>`:
+# helper class
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+- `vec_cast()`   : provides directional conversions from one type of vector to another
+
+```{r}
+testing_help <- function(x = double()) {
+  x <- vec_cast(x, double())
+  testing(x)
+}
+```
+
+# method (use format())
+
+`formatC()` : formats numbers individually and flexibly using C style format specifications.
+
+```{r}
+format.testing <- function(x, ...) {
+  out <- formatC(signif(vec_data(x)))
+  out[is.na(x)] <- NA
+  out
+}
+```
+```{r}
+x
+format(x)
+```
+
+```{r}
+testing()
+testing_help()
+```
+
+
+# Casting and coercion
+
+- `coercion`: when the change is implicitly 
+- `casting` : when the change is explicitly 
+
+This is use to change the prototype of an existing object. This can use when the x and y have different prototypes. The function we can use is
+
+`vec_ptype2(x, y)`: when x and y can be safely change to the same prototypes, it will return the prototype, otherwise, it will return an error.
+
+`vec_cast(x, to)` : it shows what prototype you want x change to
+
+Both generics use double dispatch which means that the implementation is selected based on the class of two arguments, not just one.
+
+```{r}
+vec_ptype2(testing_help(), NA)
+vec_ptype2(NA, testing_help())
+```
+
+
+```{r}
+vec_ptype2.testing.testing <- function(x, y, ...) testing()
+```
+
+# The double dispatch mechanism requires us to refer to the underlying type, double, in the method name. If we implemented vec_ptype2.vctrs_percent.numeric(), it would never be called.
+
+```{r}
+vec_ptype2.testing.double <- function(x, y, ...) double()
+vec_ptype2.double.testing <- function(x, y, ...) double()
+```
+
+
+# We can check that we’ve implemented this correctly with vec_ptype_show():
+
+```{r}
+vec_ptype_show(testing_help(), double(), testing_help())
+```
+
+
+```{r}
+vec_cast.testing.double <- function(x, to, ...) testing_help(x)
+vec_cast.double.testing <- function(x, to, ...) vec_data(x)
+```
+
+# Then we can check this works with vec_cast():
+
+```{r}
+vec_cast(0.5, testing_help())
+vec_cast(testing_help(0.5), double())
+```
+
+# Once you’ve implemented vec_ptype2() and vec_cast(), you get vec_c(), [<-, and [[<- implementations for free.
+
+```{r}
+vec_c(testing_help(0.5), 1)
+vec_c(NA, testing_help(0.5))
+# but
+vec_c(TRUE, testing_help(0.5))
+
+x <- testing_help(c(0.5, 1, 2))
+x[1:2] <- 2:1
+x[[3]] <- 0.5
+x
+```
+
+# Again, as a convenience, consider providing an as_percent() function that makes use of the casts defined in your vec_cast.vctrs_percent() methods:
+
+```{r}
+as_testing <- function(x) {
+  vec_cast(x, testing())
+}
+```
+
+
+```{r}
+as_testing <- function(x, ...) {
+  UseMethod("as_testing")
+}
+
+as_testing.default <- function(x, ...) {
+  vec_cast(x, testing())
+}
+
+as_testing.character <- function(x) {
+  value <- as.numeric(x)
+  testing(value)
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# temperature class
+```{r}
+temperature <- function(x = double(),
+                        y = character()) {
+  vec_assert(x, double())
+  vec_assert(y, character())
+  new_vctr(.data = paste(x,y,sep = " "),
+           x = x,
+           y = y,
+           class = "vctrs_temperature")
+}
+```
+
+```{r}
+x <- temperature(30, "F")
+x
+```
+
+# helper function
+
+- `vec_cast()`   : provides directional conversions from one type of vector to another
+
+```{r}
+temperature_help <- function(x = double(),
+                             y = character()) {
+  x <- vec_cast(x, to =  double())
+  y <- vec_cast(y, to = character())
+  temperature(x = x,
+              y = y)
+}
+```
+
+# method
+
+```{r}
+format.vctrs_temperature <- function(x, y, ...) {
+  if (y == "F") {
+    temperature <- (x - 32) * 5/9
+  } else {
+    temperature <- 9/5 * x + 32
+  }
+  output <- paste("temperature is:", temperature)
+#  output <- formatC(signif(vec_data(x) * 100, 3))
+#  output[is.na(x)] <- NA
+#  output[!is.na(x)] <- paste0(out[!is.na(x)], "%")
+  output
+}
+```
+
+```{r}
+x
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
