@@ -1,0 +1,57 @@
+---
+title: "sgroup"
+author: "Chi-Lin Lin"
+date: "4/26/2022"
+output: pdf_document
+---
+
+
+# 3-1 cyclic group C3 
+```{r}
+
+```
+
+
+# 6-2a cyclic group C6
+```{r}
+
+```
+
+
+# 8-1 cyclic group C8
+```{r}
+
+```
+
+
+# 8-3b dihedral group Dih8 (Heisenberg)
+```{r}
+
+```
+
+
+# 8_4c	 dicyclic group Dic8, quaternion Q8
+```{r}
+
+```
+
+
+# 12_2c group C4xC3
+```{r}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
