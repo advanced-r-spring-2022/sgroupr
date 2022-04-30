@@ -262,7 +262,7 @@ Cyclic_8 <- function(x = integer()) {
   # make sure the input data is integral. 
   # vec_cast can change the x into the type integer
   x <- vec_cast(x, integer())
-  new_cyclic_8(x)
+  new_Dih_8(x)
 }
 ```
 
@@ -278,6 +278,101 @@ cayley_c8_table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
                      nrow = 8, ncol = 8)
 rownames(cayley_c8_table) <- 0:7
 colnames(cayley_c8_table) <- 0:7
+```
+
+```{r}
+vec_arith.sgrp.sgrp <- function(op, x, y, ...) {
+  # check whether the group is the via pre-defined group function
+  # This group function extract the group attribute of sgrp class. 
+  stopifnot(group(x) == group(y))
+  # create claytable
+  table <- cayley_c8_table
+  return_index <- as.integer(1L + vec_cast(y,integer()) %% 8L)
+  x <- table[cbind(as.integer(x) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_Dih_8(x),
+    stop_incompatible_op(op, x, y)
+  )
+}
+
+vec_arith.numeric.sgrp <- function(op, x, y, ...) {
+  # if the x is float, we will discard the decimal, and convert it into the integer.
+  x <- as.integer(x)
+  # For each group we have special rule of adding a number. 
+  table <- cayley_c8_table
+  # initialize the return index as 0 and  we return original if we do nothing
+  # the cycle is 4
+  return_index <- 1L + as.integer(x) %% 8L
+  y <- table[cbind(as.integer(y) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_Dih_8(y),
+    stop_incompatible_op(op, x, y)
+    )
+}
+
+vec_arith.sgrp.numeric <- function(op, x, y, ...) {
+  y <- as.integer(y)
+  # For each group we have special rule of adding a number. 
+  table <- cayley_c8_table
+  
+  return_index <- 1L + y %% 8L
+  
+  x <- table[cbind(as.integer(x) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_Dih_8(x),
+    stop_incompatible_op(op, x, y)
+    )
+}
+```
+
+```{r}
+y <- Cyclic_8(2)
+x <- Cyclic_8(0:7)
+x + y
+2 + x
+x + 0
+x + 1
+```
+
+# 8-3b dihedral group Dih8 (Heisenberg)
+```{r}
+new_Dih_8 <- function(x = integer()) {
+  # check whether the x is integer vector 
+  vec_assert(x, integer())
+  # For each Cyclic_3 group, the range should be 0:3
+  x[x > 7L | x < 0L] <- NA_integer_
+  # create it!
+  new_sgrp(x, group = "Dih_8")
+}
+```
+
+```{r}
+Dih_8 <- function(x = integer()) {
+  # make sure the input data is integral. 
+  # vec_cast can change the x into the type integer
+  x <- vec_cast(x, integer())
+  new_cyclic_8(x)
+}
+```
+
+```{r}
+cayley_Dih8_table <- matrix(c(0L, 1L, 2L, 2L, 4L, 5L, 6L, 7L,
+                              1L, 2L, 3L, 4L, 5L, 6L, 7L, 0L,
+                              2L, 3L, 4L, 5L, 6L, 7L, 0L, 1L,
+                              3L, 4L, 5L, 6L, 7L, 0L, 1L, 2L,
+                              4L, 5L, 6L, 7L, 0L, 1L, 2L, 3L,
+                              5L, 6L, 7L, 0L, 1L, 2L, 3L, 4L,
+                              6L, 7L, 0L, 1L, 2L, 3L, 4L, 5L,
+                              7L, 0L, 1L, 2L, 3L, 4L, 5L, 6L),
+                     nrow = 8, ncol = 8)
+rownames(cayley_c8_table) <- 0:7
+colnames(cayley_c8_table) <- 0:7
+```
+```{r}
+cayley_c8_table  
 ```
 
 ```{r}
@@ -329,15 +424,14 @@ vec_arith.sgrp.numeric <- function(op, x, y, ...) {
 ```
 
 ```{r}
-y <- Cyclic_8(2)
-x <- Cyclic_8(0:7)
+y <- Dih_8(2)
+x <- Dih_8(0:7)
 x + y
 2 + x
 x + 0
 x + 1
 ```
 
-# 8-3b dihedral group Dih8 (Heisenberg)
 ```{r}
 
 ```
