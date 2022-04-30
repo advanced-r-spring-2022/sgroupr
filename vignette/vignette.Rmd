@@ -268,8 +268,8 @@ As soon as you’ve added `vec_ptype2()` and `vec_cast()`, you can use `vec_c()`
 vec_ptype2.sgrp.sgrp<- function(x, y, ...) {
     new_sgrp(group = group(y))
 }
-vec_ptype2.sgrp.integer <- function(x, y, ...) y
-vec_ptype2.integer.sgrp <- function(x, y, ...) x
+vec_ptype2.sgrp.integer <- function(x, y, ...) sgrp()
+vec_ptype2.integer.sgrp <- function(x, y, ...) sgrp()
 ```
 
 We can check that we’ve implemented this correctly with `vec_ptype_show()`:
@@ -297,7 +297,7 @@ After using `vec_ptype2()` and `vec_cast()`, next step is to use the `vec_c()` i
 
 ```{r}
 # coercion 
-vec_c(sgrp(0:4, group = "example"),Klein_4())
+vec_c(sgrp(0:4, group = "example"),sgrp())
 vec_c(Klein_4(0:3), sgrp())
 
 vec_c(sgrp(0:3, group = "example"), integer())
