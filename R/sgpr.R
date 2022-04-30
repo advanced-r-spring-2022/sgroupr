@@ -1,3 +1,12 @@
+new_sgrp <- function(x = integer(), group = character()) {
+  vctrs::vec_assert(x,integer())
+  vctrs::vec_assert(group, character(), size = 1)
+  if(setequal(group,"Klein_4")) {
+    data[data > 3L | data < 0L] <- NA_integer_
+  }
+  vctrs::new_vctr(x, group = group , class = "sgroupr_sgrp")
+}
+
 # Helper function for sgpr
 #' Genealized small group
 #'
@@ -5,13 +14,13 @@
 #' * For `is_sgrp()`: An object to test.
 #' * For `sgrp()`: A vector
 #' @param group
+#' a chacter which shows which small group x is.
 #'
 #' @return An S3 vector of class `sgroupr_sgrp`.
 #' @export
 #'
 #' @examples
 #' sgrp(c(1,2,3,4))
-#'
 sgrp <- function(x = integer(), group = NA_character_) {
   x <- vctrs::vec_cast(x, integer())
   group <- vctrs::vec_cast(group, character())
@@ -35,53 +44,7 @@ format.sgroupr_sgrp <- function(x, ...) {
   out
 }
 
-#' @export
-vec_ptype_abbr.sgroupr_sgrp <- function(x, ...) {
-  "sgrp"
-}
-
-# coercion
-#' @export
-vec_ptype2.sgroupr_sgrp.sgroupr_sgrp<- function(x, y, ...) {
-  new_sgrp(group = group(y))
-}
-
-#' @export
-vec_ptype2.sgroupr_sgrp.integer <- function(x, y, ...) new_sgrp(group = group(x))
-
-#' @export
-vec_ptype2.integer.sgroupr_sgrp <- function(x, y, ...) new_sgrp(group = group(y))
-
-# cast
-
-#' @export
-vec_cast.sgroupr_sgrp.sgroupr_sgrp <- function(x,to, ...) {
-  new_sgrp(vctrs::vec_data(x), group = group(to))
-}
-
-#' @export
-vec_cast.sgroupr_sgrp.integer <- function(x, to, ...) {
-  new_sgrp(x, group = group(to))
-}
-
-#' @export
-vec_cast.integer.sgroupr_sgrp <- function(x, to, ...)  vctrs::vec_data(x)
-
-#' @export
-as_sgrp <- function(x,...) {
-  UseMethod("as_sgrp")
-}
-
-#' @export
-as_sgrp.default <- function(x, group = NA_character_,...) {
-  vec_cast(x, new_sgrp(group = group))
-}
-#' @export
-as_sgrp.character <- function(x, group = NA_character_) {
-  value <- as.integer(x)
-  new_sgrp(value, group = group)
-}
-
 # for compatibility with the S4 system
 #' @export
 methods::setOldClass(c("sgroupr_sgrp", "vctrs_vctr"))
+

@@ -1,4 +1,13 @@
-#' @export
+
+#' Title
+#'
+#' @param op operation such as `+`
+#' @param x an sgrp
+#' @param y another sgrp
+#' @param ... Other params
+#'
+#' @return a result
+#' @exportS3Method generic
 vec_arith.sgroupr_sgrp <- function(op, x, y, ...) {
   UseMethod("vec_arith.sgroupr_sgrp", y)
 }
@@ -46,7 +55,6 @@ vec_arith.sgroupr_sgrp.integer <- function(op, x, y, ...) {
   table <- table(x)
 
   return_index <- 1L + as.integer(y %% nrow(table))
-
   data <- table[cbind(as.integer(x) + 1L, return_index)]
   switch(
     op,
@@ -54,3 +62,4 @@ vec_arith.sgroupr_sgrp.integer <- function(op, x, y, ...) {
     stop_incompatible_op(op, x, y)
   )
 }
+

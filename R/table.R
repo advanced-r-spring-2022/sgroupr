@@ -15,18 +15,48 @@ table <- function(x) {
     },
     "Klein_4" = {
       table <- matrix(c(0L, 1L, 2L, 3L,
-               1L, 0L, 3L, 2L,
-               2L, 3L, 0L, 1L,
-               3L, 2L, 1L, 0L),
+                        1L, 0L, 3L, 2L,
+                        2L, 3L, 0L, 1L,
+                        3L, 2L, 1L, 0L),
              nrow = 4, ncol = 4)
-      rownames(kl4_cayley) <- 0:3
-      colnames(kl4_cayley) <- 0:3
+      rownames(table) <- 0:3
+      colnames(table) <- 0:3
     },
     "C4_b" = {
-      matrix()
+      rbind(c(0, 1, 2, 3),
+            c(1, 2, 3, 0),
+            c( -1L,0L-i, 1L, 0L+1i),
+            c(0L-i, 1L, 0L+1i, -1L))
+    },
+    "Dih8_square" = {
+      table <-
+      rownames(table) <- 0:7
+      colnames(table) <- 0:7
+    },
+    "Dic8_b" = {
 
+    },
+    "C12" = {
+      table <- matrix(c(0L,1L,2L,3L,4L,5L,6L,7L,8L,9L,10L,11L,
+                        1L,2L,3L,4L,5L,6L,7L,8L,9L,10L,11L,0L,
+                        2L,3L,4L,5L,6L,7L,8L,9L,10L,11L,0L,1L,
+                        3L,4L,5L,6L,7L,8L,9L,10L,11L,0L,1L,2L,
+                        4L,5L,6L,7L,8L,9L,10L,11L,0L,1L,2L,3L,
+                        5L,6L,7L,8L,9L,10L,11L,0L,1L,2L,3L,4L,
+                        6L,7L,8L,9L,10L,11L,0L,1L,2L,3L,4L,5L,
+                        7L,8L,9L,10L,11L,0L,1L,2L,3L,4L,5L,6L,
+                        8L,9L,10L,11L,0L,1L,2L,3L,4L,5L,6L,7L,
+                        9L,10L,11L,0L,1L,2L,3L,4L,5L,6L,7L,8L,
+                        10L,11L,0L,1L,2L,3L,4L,5L,6L,7L,8L,9L,
+                        11L,0L,1L,2L,3L,4L,5L,6L,7L,8L,9L,10L),
+                      nrow = 12, ncol = 12)
+      rownames(table) <- 0:11
+      colnames(table) <- 0:11
+    },
+    "K4:C3" = {
+      matrix(c(0L,1L,2L,3L,4L,5L,6L,7L,8L,9L,10L,11L,
+               1L,0L,3L,1L,2L,))
     }
-
   )
   return(table)
 }

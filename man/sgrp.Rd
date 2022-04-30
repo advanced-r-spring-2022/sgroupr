@@ -15,7 +15,7 @@ is_sgrp(x)
 \item For \code{sgrp()}: A vector
 }}
 
-\item{group}{}
+\item{group}{a chacter which shows which small group x is.}
 }
 \value{
 An S3 vector of class \code{sgroupr_sgrp}.
@@ -25,5 +25,4 @@ Genealized small group
 }
 \examples{
 sgrp(c(1,2,3,4))
-
 }
