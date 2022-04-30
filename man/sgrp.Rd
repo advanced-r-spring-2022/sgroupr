@@ -25,4 +25,5 @@ Genealized small group
 }
 \examples{
 sgrp(c(1,2,3,4))
+
 }

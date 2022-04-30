@@ -25,6 +25,7 @@ is_sgrp <- function(x) {
   inherits(x, "sgroupr_sgrp")
 }
 
+# Format
 #' @export
 format.sgroupr_sgrp <- function(x, ...) {
   out <- formatC(signif(vctrs::vec_data(x),3))
@@ -81,21 +82,6 @@ as_sgrp.character <- function(x, group = NA_character_) {
   new_sgrp(value, group = group)
 }
 
-# arithmetic
-#' @export
-vec_arith.sgroupr_sgrp <- function(op, x, y, ...) {
-  UseMethod("vec_arith.sgrp", y)
-}
-
-#' @export
-vec_arith.sgroupr_sgrp.default <- function(op, x, y, ...) {
-  vctrs::stop_incompatible_op(op, x, y)
-}
-
-# Add addition arthimatic methos here.
-
-
 # for compatibility with the S4 system
 #' @export
 methods::setOldClass(c("sgroupr_sgrp", "vctrs_vctr"))
-
