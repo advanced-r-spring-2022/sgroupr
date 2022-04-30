@@ -9,6 +9,12 @@ new_sgrp <- function(data = integer(), group = character()) {
     data[data > 5L | data < 0L] <- NA_integer_
   } else if(setequal(group,"Cyclic_8")) {
     data[data > 7L | data < 0L] <- NA_integer_
+  } else if(setequal(group,"Cyclic_16")) {
+    data[data > 15L | data < 0L] <- NA_integer_
+  } else if(setequal(group,"Dih_8")) {
+    data[data > 8L | data < 0L] <- NA_integer_
+  } else if(setequal(group,"Group_C4_C3")) {
+    data[data > 11L | data < 0L] <- NA_integer_
   }
   vctrs::new_vctr(data, group = group , class = "sgroupr_sgrp")
 }

@@ -251,7 +251,7 @@ new_cyclic_8 <- function(x = integer()) {
   # check whether the x is integer vector 
   vec_assert(x, integer())
   # For each Cyclic_3 group, the range should be 0:3
-  x[x > 7L | x < 0L] <- NA_integer_
+  x[x > 8L | x < 0L] <- NA_integer_
   # create it!
   new_sgrp(x, group = "Cyclic_8")
 }
@@ -262,7 +262,7 @@ Cyclic_8 <- function(x = integer()) {
   # make sure the input data is integral. 
   # vec_cast can change the x into the type integer
   x <- vec_cast(x, integer())
-  new_Dih_8(x)
+  new_cyclic_8(x)
 }
 ```
 
@@ -278,101 +278,6 @@ cayley_c8_table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
                      nrow = 8, ncol = 8)
 rownames(cayley_c8_table) <- 0:7
 colnames(cayley_c8_table) <- 0:7
-```
-
-```{r}
-vec_arith.sgrp.sgrp <- function(op, x, y, ...) {
-  # check whether the group is the via pre-defined group function
-  # This group function extract the group attribute of sgrp class. 
-  stopifnot(group(x) == group(y))
-  # create claytable
-  table <- cayley_c8_table
-  return_index <- as.integer(1L + vec_cast(y,integer()) %% 8L)
-  x <- table[cbind(as.integer(x) + 1L, return_index)]
-  switch(
-    op,
-    "+" = new_Dih_8(x),
-    stop_incompatible_op(op, x, y)
-  )
-}
-
-vec_arith.numeric.sgrp <- function(op, x, y, ...) {
-  # if the x is float, we will discard the decimal, and convert it into the integer.
-  x <- as.integer(x)
-  # For each group we have special rule of adding a number. 
-  table <- cayley_c8_table
-  # initialize the return index as 0 and  we return original if we do nothing
-  # the cycle is 4
-  return_index <- 1L + as.integer(x) %% 8L
-  y <- table[cbind(as.integer(y) + 1L, return_index)]
-  switch(
-    op,
-    "+" = new_Dih_8(y),
-    stop_incompatible_op(op, x, y)
-    )
-}
-
-vec_arith.sgrp.numeric <- function(op, x, y, ...) {
-  y <- as.integer(y)
-  # For each group we have special rule of adding a number. 
-  table <- cayley_c8_table
-  
-  return_index <- 1L + y %% 8L
-  
-  x <- table[cbind(as.integer(x) + 1L, return_index)]
-  switch(
-    op,
-    "+" = new_Dih_8(x),
-    stop_incompatible_op(op, x, y)
-    )
-}
-```
-
-```{r}
-y <- Cyclic_8(2)
-x <- Cyclic_8(0:7)
-x + y
-2 + x
-x + 0
-x + 1
-```
-
-# 8-3b dihedral group Dih8 (Heisenberg)
-```{r}
-new_Dih_8 <- function(x = integer()) {
-  # check whether the x is integer vector 
-  vec_assert(x, integer())
-  # For each Cyclic_3 group, the range should be 0:3
-  x[x > 7L | x < 0L] <- NA_integer_
-  # create it!
-  new_sgrp(x, group = "Dih_8")
-}
-```
-
-```{r}
-Dih_8 <- function(x = integer()) {
-  # make sure the input data is integral. 
-  # vec_cast can change the x into the type integer
-  x <- vec_cast(x, integer())
-  new_cyclic_8(x)
-}
-```
-
-```{r}
-cayley_Dih8_table <- matrix(c(0L, 1L, 2L, 2L, 4L, 5L, 6L, 7L,
-                              1L, 2L, 3L, 4L, 5L, 6L, 7L, 0L,
-                              2L, 3L, 4L, 5L, 6L, 7L, 0L, 1L,
-                              3L, 4L, 5L, 6L, 7L, 0L, 1L, 2L,
-                              4L, 5L, 6L, 7L, 0L, 1L, 2L, 3L,
-                              5L, 6L, 7L, 0L, 1L, 2L, 3L, 4L,
-                              6L, 7L, 0L, 1L, 2L, 3L, 4L, 5L,
-                              7L, 0L, 1L, 2L, 3L, 4L, 5L, 6L),
-                     nrow = 8, ncol = 8)
-rownames(cayley_c8_table) <- 0:7
-colnames(cayley_c8_table) <- 0:7
-```
-```{r}
-cayley_c8_table  
 ```
 
 ```{r}
@@ -424,6 +329,101 @@ vec_arith.sgrp.numeric <- function(op, x, y, ...) {
 ```
 
 ```{r}
+y <- Cyclic_8(2)
+x <- Cyclic_8(0:7)
+x + y
+2 + x
+x + 0
+x + 1
+```
+
+# 8-3b dihedral group Dih8 (Heisenberg)
+```{r}
+new_Dih_8 <- function(x = integer()) {
+  # check whether the x is integer vector 
+  vec_assert(x, integer())
+  # For each Cyclic_3 group, the range should be 0:3
+  x[x > 8L | x < 0L] <- NA_integer_
+  # create it!
+  new_sgrp(x, group = "Dih_8")
+}
+```
+
+```{r}
+Dih_8 <- function(x = integer()) {
+  # make sure the input data is integral. 
+  # vec_cast can change the x into the type integer
+  x <- vec_cast(x, integer())
+  new_Dih_8(x)
+}
+```
+
+```{r}
+cayley_Dih8_table <- matrix(c(0L, 1L, 2L, 2L, 4L, 4L, 8L, 8L,
+                              1L, 0L, 2L, 2L, 4L, 4L, 8L, 8L,
+                              2L, 2L, 0L, 1L, 8L, 8L, 4L, 4L,
+                              2L, 2L, 1L, 0L, 8L, 8L, 4L, 4L,
+                              4L, 4L, 8L, 8L, 0L, 1L, 2L, 2L,
+                              4L, 4L, 8L, 8L, 1L, 0L, 2L, 2L,
+                              8L, 8L, 4L, 4L, 2L, 2L, 1L, 0L,
+                              8L, 8L, 4L, 4L, 2L, 2L, 0L, 1L),
+                     nrow = 8, ncol = 8)
+rownames(cayley_Dih8_table) <- 0:7
+colnames(cayley_Dih8_table) <- 0:7
+```
+```{r}
+cayley_Dih8_table  
+```
+
+```{r}
+vec_arith.sgrp.sgrp <- function(op, x, y, ...) {
+  # check whether the group is the via pre-defined group function
+  # This group function extract the group attribute of sgrp class. 
+  stopifnot(group(x) == group(y))
+  # create claytable
+  table <- cayley_Dih8_table
+  return_index <- as.integer(1L + vec_cast(y,integer()) %% 8L)
+  x <- table[cbind(as.integer(x) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_Dih_8(x),
+    stop_incompatible_op(op, x, y)
+  )
+}
+
+vec_arith.numeric.sgrp <- function(op, x, y, ...) {
+  # if the x is float, we will discard the decimal, and convert it into the integer.
+  x <- as.integer(x)
+  # For each group we have special rule of adding a number. 
+  table <- cayley_Dih8_table
+  # initialize the return index as 0 and  we return original if we do nothing
+  # the cycle is 4
+  return_index <- 1L + as.integer(x) %% 8L
+  y <- table[cbind(as.integer(y) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_Dih_8(y),
+    stop_incompatible_op(op, x, y)
+    )
+}
+
+vec_arith.sgrp.numeric <- function(op, x, y, ...) {
+  y <- as.integer(y)
+  # For each group we have special rule of adding a number. 
+  table <- cayley_Dih8_table
+  
+  return_index <- 1L + y %% 8L
+  
+  x <- table[cbind(as.integer(x) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_Dih_8(x),
+    stop_incompatible_op(op, x, y)
+    )
+}
+```
+
+```{r}
 y <- Dih_8(2)
 x <- Dih_8(0:7)
 x + y
@@ -432,22 +432,205 @@ x + 0
 x + 1
 ```
 
-```{r}
 
+# 16_1 cyclic group C16
+```{r}
+new_cyclic_16 <- function(x = integer()) {
+  # check whether the x is integer vector 
+  vec_assert(x, integer())
+  # For each Cyclic_3 group, the range should be 0:3
+  x[x > 15L | x < 0L] <- NA_integer_
+  # create it!
+  new_sgrp(x, group = "Cyclic_16")
+}
 ```
 
-
-# 8_4c dicyclic group Dic8, quaternion Q8
 ```{r}
+Cyclic_16 <- function(x = integer()) {
+  # make sure the input data is integral. 
+  # vec_cast can change the x into the type integer
+  x <- vec_cast(x, integer())
+  new_cyclic_16(x)
+}
+```
 
+```{r}
+cayley_c16_table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L,
+                             1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L,
+                             2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L,
+                             3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L,
+                             4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L,
+                             5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L,
+                             6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L,
+                             7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L,
+                             8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
+                             9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L,
+                             10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L,
+                             11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L,
+                             12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L,
+                             13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L,
+                             14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L,
+                             15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L),
+                     nrow = 16, ncol = 16)
+rownames(cayley_c16_table) <- 0:15
+colnames(cayley_c16_table) <- 0:15
+```
+
+```{r}
+vec_arith.sgrp.sgrp <- function(op, x, y, ...) {
+  # check whether the group is the via pre-defined group function
+  # This group function extract the group attribute of sgrp class. 
+  stopifnot(group(x) == group(y))
+  # create claytable
+  table <- cayley_c16_table
+  return_index <- as.integer(1L + vec_cast(y,integer()) %% 16L)
+  x <- table[cbind(as.integer(x) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_cyclic_16(x),
+    stop_incompatible_op(op, x, y)
+  )
+}
+
+vec_arith.numeric.sgrp <- function(op, x, y, ...) {
+  # if the x is float, we will discard the decimal, and convert it into the integer.
+  x <- as.integer(x)
+  # For each group we have special rule of adding a number. 
+  table <- cayley_c16_table
+  # initialize the return index as 0 and  we return original if we do nothing
+  # the cycle is 4
+  return_index <- 1L + as.integer(x) %% 16L
+  y <- table[cbind(as.integer(y) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_cyclic_16(y),
+    stop_incompatible_op(op, x, y)
+    )
+}
+
+vec_arith.sgrp.numeric <- function(op, x, y, ...) {
+  y <- as.integer(y)
+  # For each group we have special rule of adding a number. 
+  table <- cayley_c16_table
+  
+  return_index <- 1L + y %% 16L
+  
+  x <- table[cbind(as.integer(x) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_cyclic_16(x),
+    stop_incompatible_op(op, x, y)
+    )
+}
+```
+
+```{r}
+y <- Cyclic_16(2)
+x <- Cyclic_16(0:15)
+x + y
+2 + x
+x + 0
+x + 1
 ```
 
 
 # 12_2c group C4xC3
 ```{r}
-cayley_c4x3_table <- cayley_cyclic(12)
+new_group_C4_C3 <- function(x = integer()) {
+  # check whether the x is integer vector 
+  vec_assert(x, integer())
+  # For each Cyclic_3 group, the range should be 0:3
+  x[x > 15L | x < 0L] <- NA_integer_
+  # create it!
+  new_sgrp(x, group = "Group_C4_C3")
+}
 ```
 
+```{r}
+Group_C4_C3 <- function(x = integer()) {
+  # make sure the input data is integral. 
+  # vec_cast can change the x into the type integer
+  x <- vec_cast(x, integer())
+  new_group_C4_C3(x)
+}
+```
+
+```{r}
+cayley_group_C4_C3_table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L,
+                                     1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L, 9L, 10L, 11L, 8L,
+                                     2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L, 10L, 11L, 8L, 9L,
+                                     3L, 0L, 1L, 2L, 7L, 4L, 5L, 6L, 11L, 8L, 9L, 10L, 
+                                     4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 0L, 1L, 2L, 3L, 
+                                     5L, 6L, 7L, 4L, 9L, 10L, 11L, 8L, 1L, 2L, 3L, 0L, 
+                                     6L, 7L, 4L, 5L, 10L, 11L, 8L, 9L, 2L, 3L, 0L, 1L, 
+                                     7L, 4L, 5L, 6L, 11L, 8L, 9L, 10L, 3L, 0L, 1L, 2L, 
+                                     8L, 9L, 10L, 11L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 
+                                     9L, 10L, 11L, 8L, 1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L, 
+                                     10L, 11L, 8L, 9L, 2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L, 
+                                     11L, 8L, 9L, 10L, 3L, 0L, 1L, 2L, 7L, 4L, 5L, 6L),
+                     nrow = 12, ncol = 12)
+rownames(cayley_group_C4_C3_table) <- 0:11
+colnames(cayley_group_C4_C3_table) <- 0:11
+
+```
+
+```{r}
+vec_arith.sgrp.sgrp <- function(op, x, y, ...) {
+  # check whether the group is the via pre-defined group function
+  # This group function extract the group attribute of sgrp class. 
+  stopifnot(group(x) == group(y))
+  # create claytable
+  table <- cayley_group_C4_C3_table
+  return_index <- as.integer(1L + vec_cast(y,integer()) %% 16L)
+  x <- table[cbind(as.integer(x) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_group_C4_C3(x),
+    stop_incompatible_op(op, x, y)
+  )
+}
+
+vec_arith.numeric.sgrp <- function(op, x, y, ...) {
+  # if the x is float, we will discard the decimal, and convert it into the integer.
+  x <- as.integer(x)
+  # For each group we have special rule of adding a number. 
+  table <- cayley_group_C4_C3_table
+  # initialize the return index as 0 and  we return original if we do nothing
+  # the cycle is 4
+  return_index <- 1L + as.integer(x) %% 16L
+  y <- table[cbind(as.integer(y) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_group_C4_C3(y),
+    stop_incompatible_op(op, x, y)
+    )
+}
+
+vec_arith.sgrp.numeric <- function(op, x, y, ...) {
+  y <- as.integer(y)
+  # For each group we have special rule of adding a number. 
+  table <- cayley_group_C4_C3_table
+  
+  return_index <- 1L + y %% 16L
+  
+  x <- table[cbind(as.integer(x) + 1L, return_index)]
+  switch(
+    op,
+    "+" = new_group_C4_C3(x),
+    stop_incompatible_op(op, x, y)
+    )
+}
+```
+
+
+```{r}
+y <- Group_C4_C3(2)
+x <- Group_C4_C3(0:11)
+x + y
+2 + x
+x + 0
+x + 1
+```
 
 
 
