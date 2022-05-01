@@ -6,8 +6,8 @@ create_table <- function(x) {
     group(x),
     "Cyclic_3" <-  {
       table <- matrix(c(0L, 1L, 2L,
-                       1L, 0L, 2L,
-                       2L, 1L, 0L),
+                        1L, 0L, 2L,
+                        2L, 1L, 0L),
                      nrow = 3, ncol = 3)
       rownames(table) <- 0:2
       colnames(table) <- 0:2
