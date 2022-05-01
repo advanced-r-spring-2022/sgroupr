@@ -24,13 +24,13 @@ table <- function(x) {
       colnames(Cl4_cayley) <- 0:3
     }
     "Dic_8" <- {
-      table = matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L
-                       1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L
-                       2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L
-                       3L, 0L, 1L, 2L, 7L, 4L, 5L, 6L
-                       4L, 7L, 6L, 5L, 2L, 1L, 0L, 3L
-                       5L, 4L, 7L, 6L, 3L, 2L, 1L, 0L
-                       6L, 5L, 4L, 7L, 0L, 3L, 2L, 1L
+      table = matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
+                       1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L,
+                       2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L,
+                       3L, 0L, 1L, 2L, 7L, 4L, 5L, 6L,
+                       4L, 7L, 6L, 5L, 2L, 1L, 0L, 3L,
+                       5L, 4L, 7L, 6L, 3L, 2L, 1L, 0L,
+                       6L, 5L, 4L, 7L, 0L, 3L, 2L, 1L,
                        7L, 6L, 5L, 4L, 1L, 0L, 3L, 2L),
                      nrow = 8, ncol = 8)
       rownames(Dic8_cayley) <- 0:7
@@ -78,4 +78,5 @@ table <- function(x) {
       colnames(C6C2_cayley) <- 0:10
     }
   )
+  return(table)
 }
