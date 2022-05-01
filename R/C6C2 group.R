@@ -6,7 +6,7 @@
 #'
 #'
 #'@example
-C6C2(0:12)
+#'C6C2(0:12)
 
 new_C6C2 <- function(x = integer()) {
   vec_assert(x, integer())

@@ -14,7 +14,7 @@ table <- function(x) {
   table <- matrix()
   switch(
     group(x),
-    "Cyclic_4" <- {
+    "Cyclic_4_cayley" <- {
       table = matrix(c(0L, 1L, 2L, 3L,
                        1L, 2L, 3L, 0L,
                        2L, 3L, 0L, 1L,
@@ -88,6 +88,7 @@ table <- function(x) {
                        nrow = 8, ncol = 8)
     rownames(Klein8_cayley) <- 0:7
     colnames(Klein8_cayley) <- 0:7
+    }
   )
   return(table)
 }
