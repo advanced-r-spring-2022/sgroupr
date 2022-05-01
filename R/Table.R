@@ -20,10 +20,10 @@ table <- function(x) {
                        2L, 3L, 0L, 1L,
                        3L, 0L, 1L, 2L),
                      nrow = 4, ncol = 4)
-      rownames(Cl4_cayley) <- 0:3
-      colnames(Cl4_cayley) <- 0:3
-    }
-    "Dic_8" <- {
+      rownames(Cyclic_4_cayley) <- 0:3
+      colnames(Cyclic_4_cayley) <- 0:3
+    },
+    "Dcyclic_8_cayley" <- {
       table = matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
                        1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L,
                        2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L,
@@ -33,10 +33,10 @@ table <- function(x) {
                        6L, 5L, 4L, 7L, 0L, 3L, 2L, 1L,
                        7L, 6L, 5L, 4L, 1L, 0L, 3L, 2L),
                      nrow = 8, ncol = 8)
-      rownames(Dic8_cayley) <- 0:7
-      colnames(Dic8_cayley) <- 0:7
-    }
-    "C4C2" <- {
+      rownames(Dcyclic_8_cayley) <- 0:7
+      colnames(Dcyclic_8_cayley) <- 0:7
+    },
+    "C4C2_cayley" <- {
       table = matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
                        1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L,
                        2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L,
@@ -48,8 +48,8 @@ table <- function(x) {
                      nrow = 8, ncol = 8)
       rownames(C4C2_cayley) <- 0:7
       colnames(C4C2_cayley) <- 0:7
-    }
-    "C3C2" <- {
+    },
+    "C3C2_cayley" <- {
       table = matrix(c(0L, 1L, 2L, 3L, 4L, 5L,
                        1L, 2L, 0L, 4L, 5L, 3L,
                        2L, 0L, 1L, 5L, 3L, 4L,
@@ -59,8 +59,8 @@ table <- function(x) {
                      nrow = 6, ncol = 6)
       rownames(C3C2_cayley) <- 0:5
       colnames(C3C2_cayley) <- 0:5
-    }
-    "C6C2" <- {
+    },
+    "C6C2_cayley" <- {
       table = matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L,
                        1L, 2L, 3L, 4L, 5L, 0L, 7L, 8L, 9L, 10L, 11L, 6L,
                        2L, 3L, 4L, 5L, 0L, 1L, 8L, 9L, 10L, 11L, 6L, 7L, 
@@ -74,9 +74,20 @@ table <- function(x) {
                        10L, 11L, 6L, 7L, 8L, 9L, 4L, 5L, 0L, 1L, 2L, 3L,
                        11L, 6L, 7L, 8L, 9L, 10L, 5L, 0L, 1L, 2L, 3L, 4L),
                      nrow = 12, ncol = 12)
-      rownames(C6C2_cayley) <- 0:10
-      colnames(C6C2_cayley) <- 0:10
-    }
+      rownames(C6C2_cayley) <- 0:11
+      colnames(C6C2_cayley) <- 0:11
+    },
+    "Klein8_cayley" <- {
+      table = matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
+                       1L, 0L, 3L, 2L, 5L, 4L, 7L, 6L,
+                       2L, 3L, 0L, 4L, 6L, 7L, 4L, 5L,
+                       3L, 2L, 4L, 0L, 1L, 2L, 3L, 4L,
+                       4L, 5L, 6L, 7L, 0L, 1L, 2L, 3L,
+                       5L, 4L, 7L, 6L, 1L, 0L, 3L, 2L,
+                       6L, 7L, 4L, 5L, 2L, 3L, 0L, 1L),
+                       nrow = 8, ncol = 8)
+    rownames(Klein8_cayley) <- 0:7
+    colnames(Klein8_cayley) <- 0:7
   )
   return(table)
 }
