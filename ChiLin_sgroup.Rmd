@@ -359,14 +359,14 @@ Dih_8 <- function(x = integer()) {
 ```
 
 ```{r}
-cayley_Dih8_table <- matrix(c(0L, 1L, 2L, 2L, 4L, 4L, 8L, 8L,
-                              1L, 0L, 2L, 2L, 4L, 4L, 8L, 8L,
-                              2L, 2L, 0L, 1L, 8L, 8L, 4L, 4L,
-                              2L, 2L, 1L, 0L, 8L, 8L, 4L, 4L,
-                              4L, 4L, 8L, 8L, 0L, 1L, 2L, 2L,
-                              4L, 4L, 8L, 8L, 1L, 0L, 2L, 2L,
-                              8L, 8L, 4L, 4L, 2L, 2L, 1L, 0L,
-                              8L, 8L, 4L, 4L, 2L, 2L, 0L, 1L),
+cayley_Dih8_table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
+                              1L, 0L, 3L, 2L, 5L, 4L, 7L, 6L,
+                              2L, 3L, 0L, 1L, 7L, 6L, 5L, 4L,
+                              3L, 2L, 1L, 0L, 6L, 7L, 4L, 5L,
+                              4L, 5L, 6L, 7L, 0L, 1L, 2L, 3L,
+                              5L, 4L, 7L, 6L, 1L, 0L, 3L, 2L,
+                              6L, 7L, 4L, 5L, 3L, 2L, 1L, 0L,
+                              7L, 6L, 5L, 4L, 2L, 3L, 0L, 1L),
                      nrow = 8, ncol = 8)
 rownames(cayley_Dih8_table) <- 0:7
 colnames(cayley_Dih8_table) <- 0:7
@@ -631,9 +631,6 @@ x + y
 x + 0
 x + 1
 ```
-
-
-
 
 
 
