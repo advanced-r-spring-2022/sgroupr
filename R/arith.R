@@ -1,5 +1,6 @@
-#' Define the arithmetic methods of small groups
-#'
+#' @title
+#' The arithmetic methods of small groups
+#' @description
 #' @param op operation such as `+`
 #' @param x an sgrp
 #' @param y another sgrp
@@ -30,7 +31,7 @@ vec_arith.sgroupr_sgrp.sgroupr_sgrp <- function(op, x, y, ...) {
 }
 
 #' @export
-vec_arith.integer.sgroupr_sgrp <- function(op, x, y, ...) {
+vec_arith.numeric.sgroupr_sgrp <- function(op, x, y, ...) {
   # if the x is float, we will discard the decimal, and convert it into the integer.
   x <- as.integer(x)
   # For each group we have special rule of adding a number.
@@ -47,7 +48,7 @@ vec_arith.integer.sgroupr_sgrp <- function(op, x, y, ...) {
 }
 
 #' @export
-vec_arith.sgroupr_sgrp.integer <- function(op, x, y, ...) {
+vec_arith.sgroupr_sgrp.numeric <- function(op, x, y, ...) {
   y <- as.integer(y)
   # For each group we have special rule of adding a number.
   table <- table(x)
