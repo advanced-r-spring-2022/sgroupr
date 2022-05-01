@@ -1,13 +1,11 @@
-
-#' Title
+#' Define the arithmetic methods of small groups
 #'
 #' @param op operation such as `+`
 #' @param x an sgrp
 #' @param y another sgrp
 #' @param ... Other params
-#'
 #' @return a result
-#' @exportS3Method generic
+#' @export
 vec_arith.sgroupr_sgrp <- function(op, x, y, ...) {
   UseMethod("vec_arith.sgroupr_sgrp", y)
 }

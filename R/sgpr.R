@@ -1,9 +1,7 @@
 new_sgrp <- function(x = integer(), group = character()) {
   vctrs::vec_assert(x,integer())
   vctrs::vec_assert(group, character(), size = 1)
-  if(setequal(group,"Klein_4")) {
-    data[data > 3L | data < 0L] <- NA_integer_
-  }
+  x <- check_number(x,group)
   vctrs::new_vctr(x, group = group , class = "sgroupr_sgrp")
 }
 
@@ -48,3 +46,18 @@ format.sgroupr_sgrp <- function(x, ...) {
 #' @export
 methods::setOldClass(c("sgroupr_sgrp", "vctrs_vctr"))
 
+#' @export
+as_sgrp <- function(x,...) {
+  UseMethod("as_sgrp")
+}
+
+#' @export
+as_sgrp.default <- function(x, group = NA_character_,...) {
+  vec_cast(x, new_sgrp(group = group))
+}
+
+#' @export
+as_sgrp.character <- function(x, group = NA_character_) {
+  value <- as.integer(x)
+  new_sgrp(value, group = group)
+}

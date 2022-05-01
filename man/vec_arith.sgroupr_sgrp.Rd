@@ -2,7 +2,7 @@
 % Please edit documentation in R/arith.R
 \name{vec_arith.sgroupr_sgrp}
 \alias{vec_arith.sgroupr_sgrp}
-\title{Title}
+\title{Define the arithmetic methods of small groups}
 \usage{
 vec_arith.sgroupr_sgrp(op, x, y, ...)
 }
@@ -19,5 +19,5 @@ vec_arith.sgroupr_sgrp(op, x, y, ...)
 a result
 }
 \description{
-Title
+Define the arithmetic methods of small groups
 }

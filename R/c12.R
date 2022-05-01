@@ -14,3 +14,12 @@ C12<- function(x = integer()) {
   x <- vec_cast(x, integer())
   new_C12(x)
 }
+
+#' @export
+is_C12 <- function(x) {
+  result <- FALSE
+  stopifnot(is_sgrp(x))
+  if(group(x) == "C12") {
+    return(!result)
+  } else return(result)
+}
