@@ -5,7 +5,6 @@
 #'@param x, an integer vector
 #'@example
 #'Cyclic_4(0:3)
-#'@export
 new_Cyclic_4 <- function(x = integer()) {
   vec_assert(x, integer())
   x[x > 3L | x < 0L] <- NA_integer_

@@ -1,7 +1,7 @@
 #'@title
 #'Create the C3C2 sgroupr_sgrp object
 #'
-#'@description The length of C3C2 should be 5
+#'@description The length of C3C2 should be 6
 #'@param x, an integer
 #'
 #'
@@ -14,12 +14,10 @@ new_C3C2 <- function(x = integer()) {
   new_sgrp(x, group = "C3C2")
 }
 
-#'@export
 C3C2 <- function(x = integer()) {
   x <- vec_cast(x, integer())
   new_C3C2(x)
 }
-
 
 is_C3C2 <- function(x) {
   result <- FALSE

@@ -1,11 +1,10 @@
 #'@title
 #'Create Klein_8 sgroupr_sgrp object
 #'
-#'@description the length of this group should be 7
+#'@description the length of this group should be 8
 #'@param x, an integer vector
 #'@example
 #'Klein_8(0:3)
-#'@export
 new_Klein_8 <- function(x = integer()) {
   vec_assert(x, integer())
   x[x > 7L | x < 0L] <- NA_integer_

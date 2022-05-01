@@ -1,12 +1,10 @@
 #'@title 
 #'Create a C4C2 sgroupr_sgrp object
 #'
-#'@description The length of this group should be 7
+#'@description The length of this group should be 8
 #'@param x, an integer vector
 #'@example
 #'C4C2(0:7)
-#'
-#'@export
 new_C4C2 <- function(x = integer()) {
   vec_assert(x, integer())
   x[x > 7L | x < 0L] <- NA_integer_
