@@ -1,4 +1,12 @@
+#' @title
+#' Cayley table for finite small group
+#'
+#' @param x Is an sgroupr_sgrp object
+#' @return A matrix for arithmetic operation
 #' @export
+#' @examples
+#' x <- Cyclic_8(0:7)
+#' create_table(x)
 create_table <- function(x) {
   #stopifnot(is_sgrp(x))
   table <- matrix()

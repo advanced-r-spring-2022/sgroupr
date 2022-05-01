@@ -1,4 +1,3 @@
-#' @export
 new_cyclic_3 <- function(x = integer()) {
   # check whether the x is integer vector
   vctrs::vec_assert(x, integer())
@@ -8,8 +7,15 @@ new_cyclic_3 <- function(x = integer()) {
   new_sgrp(x, group = "Cyclic_3")
 }
 
-
+#' @title
+#' Create a Cyclic 3 sgroupr_sgrp object
+#'
+#' @description The length of Cyclic 3 should be 0 to 2
+#' @param x Is an integer vector
+#' @return A sgroupr_sgpr object with group Cyclic_3
 #' @export
+#' @example
+#' Cyclic_3(0:2)
 Cyclic_3 <- function(x = integer()) {
   # make sure the input data is integral.
   # vec_cast can change the x into the type integer
