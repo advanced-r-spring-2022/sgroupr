@@ -1,26 +1,3 @@
-
-new_sgrp <- function(data = integer(), group = character()) {
-  vctrs::vec_assert(data,integer())
-  vctrs::vec_assert(group, character(), size = 1)
-  if(setequal(group,"Cyclic_3")) {
-    data[data > 2L | data < 0L] <- NA_integer_
-  } else if(setequal(group,"Cyclic_6")) {
-    data[data > 5L | data < 0L] <- NA_integer_
-  } else if(setequal(group,"Cyclic_8")) {
-    data[data > 7L | data < 0L] <- NA_integer_
-  } else if(setequal(group,"Cyclic_16")) {
-    data[data > 15L | data < 0L] <- NA_integer_
-  } else if(setequal(group,"Dih_8")) {
-    data[data > 8L | data < 0L] <- NA_integer_
-  } else if(setequal(group,"Group_C4_C3")) {
-    data[data > 11L | data < 0L] <- NA_integer_
-  }
-  vctrs::new_vctr(data, group = group , class = "sgroupr_sgrp")
-}
-
-# Helper function for sgpr
-#' @title
-
 new_sgrp <- function(x = integer(), group = character()) {
   vctrs::vec_assert(x,integer())
   vctrs::vec_assert(group, character(), size = 1)
@@ -30,8 +7,7 @@ new_sgrp <- function(x = integer(), group = character()) {
 
 # Helper function for sgpr
 
-#' Genealized small group
-#'
+#' @title  Genealized small group
 #' @param x
 #' * For `is_sgrp()`: An object to test.
 #' * For `sgrp()`: A vector

@@ -14,7 +14,7 @@ new_cyclic_8 <- function(x = integer()) {
 #' @param x Is an integer vector
 #' @return A sgroupr_sgpr object with group Cyclic 8
 #' @export
-#' @example
+#' @examples
 #' Cyclic_8(0:7)
 Cyclic_8 <- function(x = integer()) {
   # make sure the input data is integral.

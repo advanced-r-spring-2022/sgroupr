@@ -15,3 +15,6 @@ A sgroupr_sgpr object with group Cyclic 6
 \description{
 The length of Cyclic 6 should be 0 to 5
 }
+\examples{
+Cyclic_6(0:5)
+}

@@ -15,3 +15,6 @@ A sgroupr_sgpr object with group Cyclic 8
 \description{
 The length of Cyclic 8 should be 0 to 7
 }
+\examples{
+Cyclic_8(0:7)
+}

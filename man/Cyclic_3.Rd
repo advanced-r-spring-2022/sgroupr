@@ -15,3 +15,6 @@ A sgroupr_sgpr object with group Cyclic_3
 \description{
 The length of Cyclic 3 should be 0 to 2
 }
+\examples{
+Cyclic_3(0:2)
+}

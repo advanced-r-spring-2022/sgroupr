@@ -14,11 +14,26 @@ new_cyclic_3 <- function(x = integer()) {
 #' @param x Is an integer vector
 #' @return A sgroupr_sgpr object with group Cyclic_3
 #' @export
-#' @example
+#' @examples
 #' Cyclic_3(0:2)
 Cyclic_3 <- function(x = integer()) {
   # make sure the input data is integral.
   # vec_cast can change the x into the type integer
   x <- vctrs::vec_cast(x, integer())
   new_cyclic_3(x)
+}
+
+
+#' @title
+#' Change a vector into object of Cyclic_3 group
+#' @param x
+#' A vector
+#' @return
+#' An Sgroupr_sgrp group belonging to Cyclic_3
+#' @export
+#' @examples
+#' x <- 0:7
+#' as_Cyclic_3(x)
+as_Cyclic_3 <- function(x) {
+  as_sgrp(x, group = "Cyclic_3")
 }

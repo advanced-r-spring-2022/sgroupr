@@ -15,3 +15,6 @@ A sgroupr_sgpr object with dihedral group Dih8 (Heisenberg)
 \description{
 The length of dihedral group Dih8 (Heisenberg) should be 0 to 7
 }
+\examples{
+Dih_8(0:7)
+}

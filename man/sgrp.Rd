@@ -2,30 +2,27 @@
 % Please edit documentation in R/sgpr.R
 \name{sgrp}
 \alias{sgrp}
-
-
-
 \alias{is_sgrp}
 \title{Genealized small group}
 \usage{
 sgrp(x = integer(), group = NA_character_)
 
 is_sgrp(x)
-
 }
 \arguments{
-\item{x}{\itemize{
-\item For \code{is_sgrp()}: An object to test.
-\item For \code{sgrp()}: A vector
-}}
+\item{x}{is an sgroupr_sgrp object}
 
 \item{group}{a chacter which shows which small group x is.}
 }
 \value{
 An S3 vector of class \code{sgroupr_sgrp}.
+
+A boolean value show whether or not the object is sgroupr_sgrp group.
 }
 \description{
 Genealized small group
+
+sgrp group Check
 }
 \examples{
 sgrp(c(1,2,3,4))

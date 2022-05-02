@@ -35,5 +35,5 @@ vec_arith.sgroupr_sgrp(op, x, y, ...)
 a result
 }
 \description{
-The arithmetic methods of small groups
+This defines how each arithmetic functions.
 }

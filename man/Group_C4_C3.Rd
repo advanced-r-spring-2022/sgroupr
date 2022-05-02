@@ -15,3 +15,6 @@ A sgroupr_sgpr object with group Cyclic C4*C3
 \description{
 The length of Group C4*C3 should be 0 to 11
 }
+\examples{
+Group_C4_C3(0:11)
+}

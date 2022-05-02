@@ -14,7 +14,7 @@ new_Dih_8 <- function(x = integer()) {
 #' @param x Is an integer vector
 #' @return A sgroupr_sgpr object with dihedral group Dih8 (Heisenberg)
 #' @export
-#' @example
+#' @examples
 #' Dih_8(0:7)
 Dih_8 <- function(x = integer()) {
   # make sure the input data is integral.

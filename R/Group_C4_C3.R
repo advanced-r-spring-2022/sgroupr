@@ -14,7 +14,7 @@ new_group_C4_C3 <- function(x = integer()) {
 #' @param x Is an integer vector
 #' @return A sgroupr_sgpr object with group Cyclic C4*C3
 #' @export
-#' @example
+#' @examples
 #' Group_C4_C3(0:11)
 Group_C4_C3 <- function(x = integer()) {
   # make sure the input data is integral.

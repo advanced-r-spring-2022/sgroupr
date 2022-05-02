@@ -23,9 +23,9 @@ check_number <- function(x,group) {
   } else if(group %in% c("S3","Cyclic_6")) {
     x[x > 5L | x < 0L] <- NA_integer_
   } else if(setequal(group,"Cyclic_16")) {
-    data[data > 15L | data < 0L] <- NA_integer_
+    x[x > 15L | x< 0L] <- NA_integer_
   } else if(setequal(group,"Cyclic_3")) {
-    data[data > 2L | data < 0L] <- NA_integer_
+    x[x > 2L | x< 0L] <- NA_integer_
   }
   return(x)
 }

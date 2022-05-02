@@ -1,6 +1,7 @@
 #' @title
 #' The arithmetic methods of small groups
 #' @description
+#' This defines how each arithmetic functions.
 #' @param op operation such as `+`
 #' @param x an sgrp
 #' * For `vec_ariths.sgroupr_sgrp.sgroupr_sgrp`
