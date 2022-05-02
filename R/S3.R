@@ -50,4 +50,5 @@ is_S3 <- function(x) {
 #' as_S3(x)
 as_S3 <- function(x) {
   as_sgrp(x, group = "S3")
+  
 }
