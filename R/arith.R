@@ -1,5 +1,6 @@
 #' @title
 #' The arithmetic methods of small groups
+
 #' @description
 #' @param op operation such as `+`
 #' @param x an sgrp
@@ -13,8 +14,8 @@ vec_arith.sgroupr_sgrp <- function(op, x, y, ...) {
   UseMethod("vec_arith.sgroupr_sgrp", y)
 }
 
-
 #' @rdname vec_arith.sgroupr_sgrp
+
 #' @export
 vec_arith.sgroupr_sgrp.default <- function(op, x, y, ...) {
   vctrs::stop_incompatible_op(op, x, y)
@@ -30,8 +31,8 @@ vec_arith.sgroupr_sgrp.sgroupr_sgrp <- function(op, x, y, ...) {
   data <- table[cbind(as.integer(x) + 1L, return_index)]
   switch(
     op,
-    "+" = new_sgrp(data,group = group(x)),
-    stop_incompatible_op(op, x, y)
+    "+" = new_sgrp(data, group = group(x)),
+    vctrs::stop_incompatible_op(op, x, y)
   )
 }
 
@@ -45,10 +46,11 @@ vec_arith.sgroupr_sgrp.numeric <- function(op, x, y, ...) {
   switch(
     op,
     "+" = new_sgrp(data, group = group(x)),
+    vctrs::stop_incompatible_op(op, x, y)
     stop_incompatible_op(op, x, y)
+
   )
 }
-
 
 #' @rdname vec_arith.sgroupr_sgrp
 #' @export
@@ -63,5 +65,6 @@ vec_arith.numeric.sgroupr_sgrp <- function(op, x, y, ...) {
     stop_incompatible_op(op, x, y)
   )
 }
+
 
 
