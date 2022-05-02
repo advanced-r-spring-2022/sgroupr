@@ -1,4 +1,5 @@
-#' Check the number of specific group
+#' @title
+#' @description Check the number of specific group
 #'
 #' @param x
 #' An integer vector

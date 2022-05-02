@@ -1,5 +1,5 @@
 #'@title
-#' Coercion file created
+#' Coercion file created for small group
 #'
 #' @export
 vec_ptype_abbr.sgroupr_sgrp <- function(x, ...) {

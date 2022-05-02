@@ -2,10 +2,10 @@
 % Please edit documentation in R/coercion.R
 \name{vec_ptype_abbr.sgroupr_sgrp}
 \alias{vec_ptype_abbr.sgroupr_sgrp}
-\title{Coercion file created}
+\title{Coercion file created for small group}
 \usage{
 \method{vec_ptype_abbr}{sgroupr_sgrp}(x, ...)
 }
 \description{
-Coercion file created
+Coercion file created for small group
 }
