@@ -1,3 +1,14 @@
+#' @title
+#' The arithmetic methods of small groups
+#'
+#' @description
+#' @param op operation such as `+`
+#' @param x Is an sgrp
+#' * For `vec_ariths.sgroupr_sgrp.sgroupr_sgrp`
+#' * For `vec_arith.sgroupr_sgrp.numeric`
+#' @param y Is another sgrp
+#' @param ... Other params
+#' @return a result
 #' @export
 vec_arith.sgroupr_sgrp <- function(op, x, y, ...) {
   UseMethod("vec_arith.sgroupr_sgrp", y)
