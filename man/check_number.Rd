@@ -18,5 +18,5 @@ A vector that change
 Check the number of specific group
 }
 \examples{
-check_number(0:6, group = "S3")
+check_number(0:7, group = "S3")
 }
