@@ -1,6 +1,6 @@
 #' @title
-#' @description Check the number of specific group
-#'
+#' Check the number of specific group
+#' 
 #' @param x
 #' An integer vector
 #' @param group
@@ -10,7 +10,7 @@
 #' A vector that change
 #' @export
 #' @examples
-#' check_number(0:6, group = "S3")
+#' check_number(0:7, group = "S3")
 check_number <- function(x,group) {
   stopifnot(is.character(group))
   stopifnot(length(group) == 1)
