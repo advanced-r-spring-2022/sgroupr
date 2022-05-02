@@ -1,7 +1,7 @@
 #'@title
 #'Create Klein_8 sgroupr_sgrp object
 #'
-#'@description the length of this group should be 8
+#'@description the length of this group should be 8.
 #'@param x, an integer vector
 #'@example
 #'Klein_8(0:3)
