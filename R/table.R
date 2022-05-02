@@ -5,7 +5,7 @@
 #' @return 
 #' A matrix for arithmetic operation
 #' 
-#' @example 
+#' @examples 
 #' x <- Cyclic_4(0:3)
 #' table(x)
 #' @export
