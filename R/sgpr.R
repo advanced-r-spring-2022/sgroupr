@@ -51,17 +51,6 @@ sgrp <- function(x = integer(), group = NA_character_) {
 
 # Test function
 
-#' @title
-#' Extract the group attribute of a sgroupr_sgrp
-#'
-#' @param x is an sgroupr_sgrp object
-#' @export
-#' @examples
-#' x <- Cyclic_3(c(0,1,2))
-#' group(x)
-group <- function(x) {
-  attr(x,"group")
-}
 
 #' @title
 #' sgrp group Check
