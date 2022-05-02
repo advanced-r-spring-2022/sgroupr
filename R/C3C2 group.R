@@ -4,7 +4,6 @@ new_C3C2 <- function(x = integer()) {
   new_sgrp(x, group = "C3C2")
 }
 
-
 #' @title
 #' Create a C3C2 sgroupr_sgrp object
 #' @param x An integer vector
