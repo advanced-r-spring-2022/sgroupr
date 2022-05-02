@@ -2,7 +2,6 @@ new_C4 <- function(x = integer()) {
   # check whether the x is integer vector
   vctrs::vec_assert(x, integer())
   # For each Klein_4 group, the range should be 0:3
-  x[x > 4L | x < 0L] <- NA_integer_
   # create it!
   new_sgrp(x, group = "C4")
 }
@@ -23,7 +22,7 @@ C4 <- function(x = integer()) {
 
 #' @title
 #' Check if a sgroupr_sgpr is C4
-#' @param An sgroupr_sgpr object
+#' @param  x an sgroupr_sgpr object
 #' @return True of False
 #' @export
 #' @examples is_C4(C4(0:3))

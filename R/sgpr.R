@@ -46,7 +46,15 @@ format.sgroupr_sgrp <- function(x, ...) {
 #' @export
 methods::setOldClass(c("sgroupr_sgrp", "vctrs_vctr"))
 
+#' @title
+#' Chang a vector into sgroupr_sgrp object
+#' @param x
+#' A sgroupr_sgrp object
+#' @param ...
+#' other params
 #' @export
+#' @examples
+#' as_sgrp(c(1L,2L,3L,4L),group = "S3")
 as_sgrp <- function(x,...) {
   UseMethod("as_sgrp")
 }

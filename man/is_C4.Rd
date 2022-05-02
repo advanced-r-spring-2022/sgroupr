@@ -7,7 +7,7 @@
 is_C4(x)
 }
 \arguments{
-\item{An}{sgroupr_sgpr object}
+\item{x}{an sgroupr_sgpr object}
 }
 \value{
 True of False
