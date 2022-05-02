@@ -37,3 +37,17 @@ Cyclic_3 <- function(x = integer()) {
 as_Cyclic_3 <- function(x) {
   as_sgrp(x, group = "Cyclic_3")
 }
+
+#' @title
+#' Check if a sgroupr_sgpr is Cyclic 3
+#' @param x An sgroupr_sgpr object
+#' @return True of False
+#' @export
+#' @examples is_Cyclic_3(Cyclic_3(0:2))
+is_Cyclic_3 <- function(x) {
+  result <- FALSE
+  stopifnot(is_sgrp(x))
+  if(group(x) == "Cyclic_3") {
+    return(!result)
+  } else return(result)
+}

@@ -23,6 +23,34 @@ Group_C4_C3 <- function(x = integer()) {
   new_group_C4_C3(x)
 }
 
+#' @title
+#' Check if a sgroupr_sgpr is Group_C4_C3
+#' @param x An sgroupr_sgpr object
+#' @return True of False
+#' @export
+#' @examples is_Group_C4_C3(Group_C4_C3(0:11))
+is_Group_C4_C3 <- function(x) {
+  result <- FALSE
+  stopifnot(is_sgrp(x))
+  if(group(x) == "Group_C4_C3") {
+    return(!result)
+  } else return(result)
+}
+
+#' @title
+#' Change a vector into object of Group_C4_C3
+#' @param x
+#' A vector
+#' @return
+#' An Sgroupr_sgrp group belonging to Group_C4_C3
+#' @export
+#' @examples
+#' x <- 0:11
+#' as_Group_C4_C3(x)
+as_Group_C4_C3 <- function(x) {
+  as_sgrp(x, group = "Group_C4_C3")
+}
+
 
 
 
