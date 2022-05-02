@@ -23,13 +23,33 @@ Cyclic_6 <- function(x = integer()) {
   new_cyclic_6(x)
 }
 
+#' @title
+#' Check if a sgroupr_sgpr is Cyclic 6
+#' @param x An sgroupr_sgpr object
+#' @return True of False
+#' @export
+#' @examples is_Cyclic_6(Cyclic_6(0:5))
+is_Cyclic_6 <- function(x) {
+  result <- FALSE
+  stopifnot(is_sgrp(x))
+  if(group(x) == "Cyclic_6") {
+    return(!result)
+  } else return(result)
+}
 
-
-
-
-
-
-
+#' @title
+#' Change a vector into object of Cyclic 6 group
+#' @param x
+#' A vector
+#' @return
+#' An Sgroupr_sgrp group belonging to Cyclic 6
+#' @export
+#' @examples
+#' x <- 0:5
+#' as_Cyclic_6(x)
+as_Cyclic_6 <- function(x) {
+  as_sgrp(x, group = "Cyclic_6")
+}
 
 
 

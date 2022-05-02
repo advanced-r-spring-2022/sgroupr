@@ -23,5 +23,31 @@ Cyclic_8 <- function(x = integer()) {
   new_cyclic_8(x)
 }
 
+#' @title
+#' Check if a sgroupr_sgpr is Cyclic 8
+#' @param x An sgroupr_sgpr object
+#' @return True of False
+#' @export
+#' @examples is_Cyclic_8(Cyclic_8(0:7))
+is_Cyclic_8 <- function(x) {
+  result <- FALSE
+  stopifnot(is_sgrp(x))
+  if(group(x) == "Cyclic_8") {
+    return(!result)
+  } else return(result)
+}
 
+#' @title
+#' Change a vector into object of Cyclic 8 group
+#' @param x
+#' A vector
+#' @return
+#' An Sgroupr_sgrp group belonging to Cyclic 8
+#' @export
+#' @examples
+#' x <- 0:7
+#' as_Cyclic_8(x)
+as_Cyclic_8 <- function(x) {
+  as_sgrp(x, group = "Cyclic_8")
+}
 
