@@ -15,7 +15,7 @@ new_S3 <- function(x = integer()) {
 #' @examples
 #' S3(0:7)
 #' @export
-S3<- function(x = integer()) {
+S3 <- function(x = integer()) {
   x <- vctrs::vec_cast(x, integer())
   new_S3(x)
 }
@@ -51,6 +51,14 @@ is_S3 <- function(x) {
 as_S3 <- function(x) {
   as_sgrp(x, group = "S3")
 }
+
+
+
+
+
+
+
+
 
 
 
