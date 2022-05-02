@@ -10,7 +10,7 @@ group(x)
 \item{x}{An sgroupr_sgrp object}
 }
 \value{
-a character in lenth of 1.
+a character in length of 1.
 }
 \description{
 Extract the group attribute of a sgroupr_sgrp
