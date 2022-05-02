@@ -228,6 +228,18 @@ table <- function(x) {
                       nrow = 12,ncol = 12)
       rownames(table) <- 0:11
       colnames(table) <- 0:11
+    },
+    "Dih8" = {
+      table <- rbind(c(0L,1L,2L,3L,4L,5L,6L,7L),
+                     c(1L,2L,3L,0L,5L,6L,7L,4L),
+                     c(2L,3L,0L,1L,6L,7L,4L,5L),
+                     c(3L,0L,1L,2L,7L,4L,5L,6L),
+                     c(4L,7L,6L,5L,0L,3L,2L,1L),
+                     c(5L,4L,7L,6L,1L,0L,3L,2L),
+                     c(6L,5L,4L,7L,2L,1L,0L,3L),
+                     c(7L,6L,5L,4L,3L,2L,1L,0L))
+      rownames(table) <- 0:7
+      colnames(table) <- 0:7
     }
   )
   return(table)
