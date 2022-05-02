@@ -12,7 +12,7 @@ sgrp(x = integer(), group = NA_character_)
 \item For \code{sgrp()}: A vector
 }}
 
-\item{group}{a chacter which shows which small group x is.}
+\item{group}{a character which shows which small group x is.}
 }
 \value{
 An S3 vector of class \code{sgroupr_sgrp}.

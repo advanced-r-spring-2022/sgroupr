@@ -4,7 +4,7 @@
 \alias{vec_cast.sgroupr_sgrp.sgroupr_sgrp}
 \title{}
 \usage{
-vec_cast.sgroupr_sgrp.sgroupr_sgrp(x, to, ...)
+\method{vec_cast}{sgroupr_sgrp.sgroupr_sgrp}(x, to, ...)
 }
 \description{
 

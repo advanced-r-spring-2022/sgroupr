@@ -4,7 +4,7 @@
 \alias{vec_ptype_abbr.sgroupr_sgrp}
 \title{Coercion file created}
 \usage{
-vec_ptype_abbr.sgroupr_sgrp(x, ...)
+\method{vec_ptype_abbr}{sgroupr_sgrp}(x, ...)
 }
 \description{
 Coercion file created
