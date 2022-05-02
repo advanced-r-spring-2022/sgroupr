@@ -23,7 +23,6 @@ Cyclic_8 <- function(x = integer()) {
   new_cyclic_8(x)
 }
 
-
 #' @title
 #' Check if a sgroupr_sgpr is Cyclic 8
 #' @param x An sgroupr_sgpr object
@@ -38,7 +37,6 @@ is_Cyclic_8 <- function(x) {
   } else return(result)
 }
 
-#' @title
 #' Change a vector into object of Cyclic 8 group
 #' @param x
 #' A vector
@@ -51,3 +49,5 @@ is_Cyclic_8 <- function(x) {
 as_Cyclic_8 <- function(x) {
   as_sgrp(x, group = "Cyclic_8")
 }
+
+

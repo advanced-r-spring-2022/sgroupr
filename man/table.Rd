@@ -2,7 +2,7 @@
 % Please edit documentation in R/table.R
 \name{table}
 \alias{table}
-\title{Cayley table for finite small group}
+\title{Cayley Table}
 \usage{
 table(x)
 }
@@ -13,9 +13,9 @@ table(x)
 A matrix for arithmetic operation
 }
 \description{
-Cayley table for finite small group
+Cayley Table
 }
 \examples{
-x <- S3(0:5)
+x <- Cyclic_4(0:3)
 table(x)
 }

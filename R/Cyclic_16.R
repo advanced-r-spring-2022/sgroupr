@@ -23,7 +23,6 @@ Cyclic_16 <- function(x = integer()) {
   new_cyclic_16(x)
 }
 
-
 #' @title
 #' Check if a sgroupr_sgpr is Cyclic 16
 #' @param x An sgroupr_sgpr object
@@ -38,7 +37,6 @@ is_Cyclic_16 <- function(x) {
   } else return(result)
 }
 
-#' @title
 #' Change a vector into object of Cyclic 16 group
 #' @param x
 #' A vector
@@ -51,4 +49,6 @@ is_Cyclic_16 <- function(x) {
 as_Cyclic_16 <- function(x) {
   as_sgrp(x, group = "Cyclic_16")
 }
+
+
 

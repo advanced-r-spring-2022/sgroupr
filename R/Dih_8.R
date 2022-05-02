@@ -23,7 +23,6 @@ Dih_8 <- function(x = integer()) {
   new_Dih_8(x)
 }
 
-
 #' @title
 #' Check if a sgroupr_sgpr is dihedral group Dih8 (Heisenberg)
 #' @param x An sgroupr_sgpr object
