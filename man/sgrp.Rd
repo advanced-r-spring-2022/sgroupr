@@ -2,9 +2,16 @@
 % Please edit documentation in R/sgpr.R
 \name{sgrp}
 \alias{sgrp}
+
+
+
+\alias{is_sgrp}
 \title{Genealized small group}
 \usage{
 sgrp(x = integer(), group = NA_character_)
+
+is_sgrp(x)
+
 }
 \arguments{
 \item{x}{\itemize{
