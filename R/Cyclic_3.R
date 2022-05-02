@@ -8,7 +8,7 @@ new_cyclic_3 <- function(x = integer()) {
 }
 
 #' @title
-#' Create a Cyclic 3 sgroupr_sgrp object
+#' Create a Cyclic_3 sgroupr_sgrp object
 #'
 #' @description The length of Cyclic 3 should be 0 to 2
 #' @param x Is an integer vector
@@ -23,16 +23,29 @@ Cyclic_3 <- function(x = integer()) {
   new_cyclic_3(x)
 }
 
+#' @title
+#' Check if a sgroupr_sgpr is Cyclic 3
+#' @param x An sgroupr_sgpr object
+#' @return True of False
+#' @export
+#' @examples is_Cyclic_3(Cyclic_3(0:2))
+is_Cyclic_3 <- function(x) {
+  result <- FALSE
+  stopifnot(is_sgrp(x))
+  if(group(x) == "Cyclic_3") {
+    return(!result)
+  } else return(result)
+}
 
 #' @title
-#' Change a vector into object of Cyclic_3 group
+#' Change a vector into object of Cyclic 3 group
 #' @param x
 #' A vector
 #' @return
-#' An Sgroupr_sgrp group belonging to Cyclic_3
+#' An Sgroupr_sgrp group belonging to Cyclic 3
 #' @export
 #' @examples
-#' x <- 0:7
+#' x <- 0:2
 #' as_Cyclic_3(x)
 as_Cyclic_3 <- function(x) {
   as_sgrp(x, group = "Cyclic_3")
