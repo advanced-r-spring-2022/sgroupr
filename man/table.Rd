@@ -15,3 +15,7 @@ A matrix for arithmetic operation
 \description{
 Cayley Table
 }
+\examples{
+x <- Cyclic_4(0:3)
+table(x)
+}
