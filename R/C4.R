@@ -1,8 +1,5 @@
 new_C4 <- function(x = integer()) {
-  # check whether the x is integer vector
   vctrs::vec_assert(x, integer())
-  # For each Klein_4 group, the range should be 0:3
-  # create it!
   new_sgrp(x, group = "C4")
 }
 
