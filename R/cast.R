@@ -1,4 +1,3 @@
-
 #' @export
 vec_cast.sgroupr_sgrp.sgroupr_sgrp <- function(x,to, ...) {
   new_sgrp(vctrs::vec_data(x), group = group(to))
