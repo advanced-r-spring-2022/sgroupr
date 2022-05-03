@@ -2,21 +2,9 @@
 % Please edit documentation in R/arith.R
 \name{vec_arith.sgroupr_sgrp}
 \alias{vec_arith.sgroupr_sgrp}
-\alias{vec_arith.sgroupr_sgrp.default}
-\alias{vec_arith.sgroupr_sgrp.sgroupr_sgrp}
-\alias{vec_arith.sgroupr_sgrp.numeric}
-\alias{vec_arith.numeric.sgroupr_sgrp}
 \title{The arithmetic methods of small groups}
 \usage{
-vec_arith.sgroupr_sgrp(op, x, y, ...)
-
-\method{vec_arith}{sgroupr_sgrp.default}(op, x, y, ...)
-
-\method{vec_arith}{sgroupr_sgrp.sgroupr_sgrp}(op, x, y, ...)
-
-\method{vec_arith}{sgroupr_sgrp.numeric}(op, x, y, ...)
-
-\method{vec_arith}{numeric.sgroupr_sgrp}(op, x, y, ...)
+\method{vec_arith}{sgroupr_sgrp}(op, x, y, ...)
 }
 \arguments{
 \item{op}{operation such as \code{+}}
