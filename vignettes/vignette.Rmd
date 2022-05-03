@@ -86,9 +86,26 @@ group(x)
 table(x)
 ```
 
-#### 5.Use can use + operation to do the arithmetic for the group, and based on the number we use, it will return the number + 1 row of the Cayley table. When the number is greater than the total row number, it just starts from the first row.
+#### 5.Use can use + operation to do the arithmetic for the group, and based on the number we use, it will return the number + 1 row of the Cayley table. When the number is greater than the total row number, it just starts from the first row. There are three different way to do the arithmetic:
+
+1. number + group
 ```{r}
 5 + x # it should return row 6 of the Cayley table 
 
 11 + x # it should return row 4 ((11 %% 8) + 1) of the Cayley table 
 ```
+
+2. group + number
+```{r}
+x + 5
+
+x + 11 
+```
+
+3. group + group
+```{r}
+z <- Cyclic_8(5)
+
+x + z
+```
+
