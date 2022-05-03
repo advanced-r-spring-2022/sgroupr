@@ -16,6 +16,6 @@ An Sgroupr_sgrp group belonging to K4_C3
 Change a vector into object of K4_C3 group
 }
 \examples{
-x <- 0:7
+x <- 0:11
 as_K4_C3(x)
 }

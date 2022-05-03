@@ -16,6 +16,6 @@ True or False
 Test whether x is K4_C3
 }
 \examples{
-x <- K4_C3(0:7)
+x <- K4_C3(0:11)
 is_K4_C3(x)
 }

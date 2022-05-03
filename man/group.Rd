@@ -16,6 +16,6 @@ a character in lenth of 1.
 Extract the group attribute of a sgroupr_sgrp
 }
 \examples{
-x <- S3(c(0,1,2,3,4,5,6,7))
+x <- Klein_4(c(0,1,2,3,4,5,6,7))
 group(x)
 }
