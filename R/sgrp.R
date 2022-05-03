@@ -1,9 +1,9 @@
 new_sgrp <- function(x = integer(), group = character()) {
-  vctrs::vec_assert(x,integer())
+  vctrs::vec_assert(x, integer())
   vctrs::vec_assert(group, character(), size = 1)
   stopifnot(check_group(group))
-  x <- check_number(x,group)
-  vctrs::new_vctr(x, group = group , class = "sgroupr_sgrp")
+  x <- check_number(x, group)
+  vctrs::new_vctr(x, group = group, class = "sgroupr_sgrp")
 }
 
 # Helper function for sgpr
@@ -42,10 +42,10 @@ is_sgrp <- function(x) {
 # Format
 #' @export
 format.sgroupr_sgrp <- function(x, ...) {
-  out <- formatC(signif(vctrs::vec_data(x),3))
+  out <- formatC(signif(vctrs::vec_data(x), 3))
   # Makes nicer to print NA instead of "NA"
   out[is.na(x)] <- NA
-  cat(attr(x,"group"), "\n")
+  cat(attr(x, "group"), "\n")
   out
 }
 
@@ -62,12 +62,12 @@ methods::setOldClass(c("sgroupr_sgrp", "vctrs_vctr"))
 #' @export
 #' @examples
 #' as_sgrp(c(1L,2L,3L,4L),group = "Dih_6")
-as_sgrp <- function(x,...) {
+as_sgrp <- function(x, ...) {
   UseMethod("as_sgrp")
 }
 
 #' @export
-as_sgrp.default <- function(x, group = NA_character_,...) {
+as_sgrp.default <- function(x, group = NA_character_, ...) {
   vec_cast(x, new_sgrp(group = group))
 }
 
@@ -76,4 +76,3 @@ as_sgrp.character <- function(x, group = NA_character_) {
   value <- as.integer(x)
   new_sgrp(value, group = group)
 }
-

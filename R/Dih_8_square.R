@@ -35,7 +35,7 @@ Dih_8_square <- function(x = integer()) {
 is_Dih_8_square <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(group(x) == "Dih_8_square") {
+  if (group(x) == "Dih_8_square") {
     return(!result)
   } else return(result)
 }

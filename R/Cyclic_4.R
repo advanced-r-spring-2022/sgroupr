@@ -21,12 +21,12 @@ Cyclic_4 <- function(x = integer()) {
 #' @param  x an sgroupr_sgpr object
 #' @return True of False
 #' @export
-#' @examples 
+#' @examples
 #' is_Cyclic_4(Cyclic_4(0:3))
 is_Cyclic_4 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(attributes(x)$group == "Cyclic_4") {
+  if (attributes(x)$group == "Cyclic_4") {
     return(!result)
   } else return(result)
 }

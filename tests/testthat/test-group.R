@@ -1,28 +1,28 @@
 test_that("C3_C2", {
  x <- C3_C2(c(0:6))
- expect_equal(as.integer(x),c(0,1,2,3,4,5,NA))
+ expect_equal(as.integer(x), c(0, 1, 2, 3, 4, 5, NA))
  expect_equal(attr(x,"group"),"C3_C2")
  expect_equal(as_C3_C2(0:5), C3_C2(0:5))
  expect_equal(as_C3_C2(c('0','1','2','3','4','5')), C3_C2(0:5))
  expect_equal(is_C3_C2(x),TRUE)
  expect_equal(is_C3_C2(Klein_8(0:5)), FALSE)
  x <- C3_C2(c(0:5))
- expect_equal(vctrs::vec_c(x,1L),C3_C2(c(0,1,2,3,4,5,1)))
+ expect_equal(vctrs::vec_c(x, 1L),C3_C2(c(0, 1, 2, 3, 4, 5, 1)))
  expect_equal(vctrs::vec_cast(x,integer()),c(0L:5L))
- expect_equal(as.integer(1 + x),c(1,2,0,4,5,3))
+ expect_equal(as.integer(1 + x),c(1, 2, 0, 4, 5, 3))
 })
 
 test_that("C4_C3", {
   x <- C4_C3(c(0:12))
-  expect_equal(as.integer(x),c(0:11,NA))
+  expect_equal(as.integer(x),c(0:11, NA))
   expect_equal(attr(x,"group"),"C4_C3")
   expect_equal(as_C4_C3(0:5), C4_C3(0:5))
   expect_equal(as_C4_C3(c('0','1','2','3','4','5')), C4_C3(0:5))
   expect_equal(is_C4_C3(x),TRUE)
   expect_equal(is_C4_C3(Klein_8(0:12)), FALSE)
-  expect_equal(vctrs::vec_c(x,1L), C4_C3(c(0:12,1)))
-  expect_equal(vctrs::vec_cast(x,integer()),c(0L:11L,NA))
-  expect_equal(as.integer(1L + x),c(1,2,3,0,5,6,7,4,9,10,11,8,NA))
+  expect_equal(vctrs::vec_c(x, 1L), C4_C3(c(0:12, 1)))
+  expect_equal(vctrs::vec_cast(x,integer()),c(0L:11L, NA))
+  expect_equal(as.integer(1L + x),c(1, 2, 3, 0, 5, 6, 7, 4, 9, 10, 11, 8, NA))
 })
 
 test_that("C4_C2", {
@@ -277,6 +277,22 @@ test_that("Klein_4", {
   expect_equal(is_Klein_4(Klein_8(0:12)), FALSE)
   expect_equal(vctrs::vec_c(x,1L), Klein_4(c(0:4,1)))
   expect_equal(vctrs::vec_cast(x,integer()),c(0L:3L,NA))
+  table <- table(x)
+  test <- table[,2]
+  names(test) <- NULL
+  expect_equal(as.integer(1L + x),c(test,NA))
+})
+
+test_that("C4_C4", {
+  x <- C4_C4(c(0:16))
+  expect_equal(as.integer(x),c(0:15,NA))
+  expect_equal(attr(x,"group"),"C4_C4")
+  expect_equal(as_C4_C4(0:2), C4_C4(0:2))
+  expect_equal(as_C4_C4(c('0','1','2','3')), C4_C4(0:3))
+  expect_equal(is_C4_C4(x),TRUE)
+  expect_equal(is_C4_C4(Klein_8(0:11)), FALSE)
+  expect_equal(vctrs::vec_c(x,1L), C4_C4(c(0:16,1)))
+  expect_equal(vctrs::vec_cast(x,integer()),c(0L:15L,NA))
   table <- table(x)
   test <- table[,2]
   names(test) <- NULL

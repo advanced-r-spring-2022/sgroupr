@@ -32,7 +32,7 @@ Cyclic_8 <- function(x = integer()) {
 is_Cyclic_8 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(group(x) == "Cyclic_8") {
+  if (group(x) == "Cyclic_8") {
     return(!result)
   } else return(result)
 }
@@ -50,4 +50,3 @@ is_Cyclic_8 <- function(x) {
 as_Cyclic_8 <- function(x) {
   as_sgrp(x, group = "Cyclic_8")
 }
-

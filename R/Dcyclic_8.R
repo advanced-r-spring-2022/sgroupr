@@ -25,7 +25,7 @@ Dcyclic_8 <- function(x = integer()) {
 is_Dcyclic_8 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(attributes(x)$group == "Dcyclic_8") {
+  if (attributes(x)$group == "Dcyclic_8") {
     return(!result)
   } else return(result)
 }

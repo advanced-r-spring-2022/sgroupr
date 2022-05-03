@@ -30,7 +30,7 @@ C4_C3 <- function(x = integer()) {
 is_C4_C3 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(group(x) == "C4_C3") {
+  if (group(x) == "C4_C3") {
     return(!result)
   } else return(result)
 }
@@ -48,13 +48,3 @@ is_C4_C3 <- function(x) {
 as_C4_C3 <- function(x) {
   as_sgrp(x, group = "C4_C3")
 }
-
-
-
-
-
-
-
-
-
-

@@ -25,7 +25,7 @@ C6_C2 <- function(x = integer()) {
 is_C6_C2 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(attributes(x)$group == "C6_C2") {
+  if (attributes(x)$group == "C6_C2") {
     return(!result)
   } else return(result)
 }

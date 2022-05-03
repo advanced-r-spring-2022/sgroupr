@@ -24,7 +24,7 @@ C4_C2 <- function(x = integer()) {
 is_C4_C2 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(attributes(x)$group == "C4_C2") {
+  if (attributes(x)$group == "C4_C2") {
     return(!result)
   } else return(result)
 }
@@ -43,5 +43,3 @@ is_C4_C2 <- function(x) {
 as_C4_C2 <- function(x) {
   as_sgrp(x, group = "C4_C2")
 }
-
-

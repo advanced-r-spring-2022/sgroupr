@@ -15,7 +15,7 @@ table <- function(x) {
   switch(
     group(x),
     "Dih_6" =  {
-      table = rbind(c(0L,1L,2L,3L,4L,5L),
+      table <-  rbind(c(0L,1L,2L,3L,4L,5L),
                     c(1L,2L,0L,4L,5L,3L),
                     c(2L,0L,1L,5L,3L,4L),
                     c(3L,5L,4L,0L,2L,1L),

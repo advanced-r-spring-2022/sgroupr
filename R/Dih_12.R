@@ -30,7 +30,7 @@ Dih_12 <- function(x = integer()) {
 is_Dih_12 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(group(x) == "Dih_12") {
+  if (group(x) == "Dih_12") {
     return(!result)
   } else return(result)
 }
@@ -48,4 +48,3 @@ is_Dih_12 <- function(x) {
 as_Dih_12 <- function(x) {
   as_sgrp(x, group = "Dih_12")
 }
-

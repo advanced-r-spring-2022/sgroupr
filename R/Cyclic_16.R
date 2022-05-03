@@ -32,7 +32,7 @@ Cyclic_16 <- function(x = integer()) {
 is_Cyclic_16 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(group(x) == "Cyclic_16") {
+  if (group(x) == "Cyclic_16") {
     return(!result)
   } else return(result)
 }

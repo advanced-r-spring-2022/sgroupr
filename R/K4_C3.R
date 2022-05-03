@@ -35,7 +35,7 @@ K4_C3 <- function(x = integer()) {
 is_K4_C3 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(group(x) == "K4_C3") {
+  if (group(x) == "K4_C3") {
     return(!result)
   } else return(result)
 }

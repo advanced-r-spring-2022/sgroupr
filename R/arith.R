@@ -26,7 +26,7 @@ vec_arith.sgroupr_sgrp.sgroupr_sgrp <- function(op, x, y, ...) {
   stopifnot(group(x) == group(y))
   # create cayley table
   table <- table(x)
-  return_index <- as.integer(1L + vctrs::vec_cast(y,integer()) %% nrow(table))
+  return_index <- as.integer(1L + vctrs::vec_cast(y, integer()) %% nrow(table))
   data <- table[cbind(as.integer(x) + 1L, return_index)]
   switch(
     op,
@@ -63,6 +63,3 @@ vec_arith.numeric.sgroupr_sgrp <- function(op, x, y, ...) {
     stop_incompatible_op(op, x, y)
   )
 }
-
-
-

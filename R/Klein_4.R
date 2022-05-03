@@ -25,7 +25,7 @@ Klein_4 <- function(x = integer()) {
 is_Klein_4 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(attributes(x)$group == "Klein_4") {
+  if (attributes(x)$group == "Klein_4") {
     return(!result)
   } else return(result)
 }
@@ -43,4 +43,3 @@ is_Klein_4 <- function(x) {
 as_Klein_4 <- function(x) {
   as_sgrp(x, group = "Klein_4")
 }
-
