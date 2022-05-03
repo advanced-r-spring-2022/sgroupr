@@ -1,3 +1,4 @@
+#' @import vctrs
 #' @title
 #' The arithmetic methods of small groups
 #' @description
@@ -10,18 +11,31 @@
 #' @param ... Other params
 #' @return a result
 #' @export
+#' @method vec_arith sgroupr_sgrp
 vec_arith.sgroupr_sgrp <- function(op, x, y, ...) {
   UseMethod("vec_arith.sgroupr_sgrp", y)
 }
 
-#' @rdname vec_arith.sgroupr_sgrp
 #' @export
+#' @method vec_arith.sgroupr_sgrp default
 vec_arith.sgroupr_sgrp.default <- function(op, x, y, ...) {
   vctrs::stop_incompatible_op(op, x, y)
+  }
+
+
+#' @export
+#' @method vec_arith.sgroupr_sgrp MISSING
+vec_arith.sgroupr_sgrp.MISSING <- function(op, x, y, ...) {
+  switch (
+    op,
+    "+" = x,
+    vctrs::stop_incompatible_op()
+  )
 }
 
-#' @rdname vec_arith.sgroupr_sgrp
+
 #' @export
+#' @method vec_arith.sgroupr_sgrp sgroupr_sgrp
 vec_arith.sgroupr_sgrp.sgroupr_sgrp <- function(op, x, y, ...) {
   stopifnot(group(x) == group(y))
   # create cayley table
@@ -35,8 +49,8 @@ vec_arith.sgroupr_sgrp.sgroupr_sgrp <- function(op, x, y, ...) {
   )
 }
 
-#' @rdname vec_arith.sgroupr_sgrp
 #' @export
+#' @method vec_arith.sgroupr_sgrp numeric
 vec_arith.sgroupr_sgrp.numeric <- function(op, x, y, ...) {
   y <- as.integer(y)
   table <- table(x)
@@ -45,13 +59,12 @@ vec_arith.sgroupr_sgrp.numeric <- function(op, x, y, ...) {
   switch(
     op,
     "+" = new_sgrp(data, group = group(x)),
-    vctrs::stop_incompatible_op(op, x, y),
-    stop_incompatible_op(op, x, y)
+    vctrs::stop_incompatible_op(op, x, y)
   )
 }
 
-#' @rdname vec_arith.sgroupr_sgrp
 #' @export
+#' @method vec_arith.numeric sgroupr_sgrp
 vec_arith.numeric.sgroupr_sgrp <- function(op, x, y, ...) {
   x <- as.integer(x)
   table <- table(y)
@@ -60,6 +73,6 @@ vec_arith.numeric.sgroupr_sgrp <- function(op, x, y, ...) {
   switch(
     op,
     "+" = new_sgrp(data, group = group(y)),
-    stop_incompatible_op(op, x, y)
+    vctrs::stop_incompatible_op(op, x, y)
   )
 }
