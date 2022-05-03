@@ -13,7 +13,7 @@ C6_C2(x = integer())
 a sgroupr_sgpr object with group C6_C2
 }
 \description{
-Create a C6_C2 sgroupr_sgrp object
+C6_C2 belongs to the multiplication Group
 }
 \examples{
 C6_C2(0:11)

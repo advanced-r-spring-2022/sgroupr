@@ -13,7 +13,7 @@ Cyclic_3(x = integer())
 A sgroupr_sgpr object with group Cyclic_3
 }
 \description{
-The length of Cyclic 3 should be 0 to 2
+Cyclic 3 belongs to the Cyclic Group
 }
 \examples{
 Cyclic_3(0:2)

@@ -13,7 +13,7 @@ Cyclic_4(x = integer())
 a sgroupr_sgpr object with group Cyclic_4
 }
 \description{
-Create a Cyclic_4 sgroupr_sgrp object
+Cyclic 4 belongs to the Cyclic Group
 }
 \examples{
 Cyclic_4(0:3)

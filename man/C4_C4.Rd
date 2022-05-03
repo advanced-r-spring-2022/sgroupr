@@ -13,7 +13,7 @@ C4_C4(x = integer())
 a sgroupr_sgpr object with group C4_C4
 }
 \description{
-Create a C4_C4 sgroupr_sgrp object
+C4_C4 belongs to the multiplication Group
 }
 \examples{
 C4_C4(0:15)

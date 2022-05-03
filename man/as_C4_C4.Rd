@@ -10,7 +10,7 @@ as_C4_C4(x)
 \item{x}{A vector}
 }
 \value{
-An Sgroupr_sgrp group belonging to C4_C4
+An Sgroupr_sgrp group that belongs to C4_C4
 }
 \description{
 Change a vector into object of C4_C4 group

@@ -2,7 +2,7 @@
 % Please edit documentation in R/C4_C3.R
 \name{as_C4_C3}
 \alias{as_C4_C3}
-\title{Change a vector into object of Group_C4_C3}
+\title{Change a vector into object of C4_C3}
 \usage{
 as_C4_C3(x)
 }
@@ -10,10 +10,10 @@ as_C4_C3(x)
 \item{x}{A vector}
 }
 \value{
-An Sgroupr_sgrp group belonging to Group_C4_C3
+An Sgroupr_sgrp group that belongs to C4_C3
 }
 \description{
-Change a vector into object of Group_C4_C3
+Change a vector into object of C4_C3
 }
 \examples{
 x <- 0:11

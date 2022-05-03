@@ -13,7 +13,7 @@ Cyclic_8(x = integer())
 A sgroupr_sgpr object with group Cyclic 8
 }
 \description{
-The length of Cyclic 8 should be 0 to 7
+Cyclic 8 belongs to the Cyclic Group
 }
 \examples{
 Cyclic_8(0:7)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/Dih_8_square.R
 \name{Dih_8_square}
 \alias{Dih_8_square}
-\title{Create a Dih8 small group of sgroupr_sgrp}
+\title{Create a Dih_8 (Square) small group of sgroupr_sgrp}
 \usage{
 Dih_8_square(x = integer())
 }
@@ -10,10 +10,10 @@ Dih_8_square(x = integer())
 \item{x}{An integer vector}
 }
 \value{
-Return an object of sgroupr_sgrp with group Dih8
+An object of sgroupr_sgrp with group Dih_8
 }
 \description{
-Create a Dih8 small group of sgroupr_sgrp
+Dih_8 (Square) belongs to the dihedral Group
 }
 \examples{
 Dih_8_square(0:7)

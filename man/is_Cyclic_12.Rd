@@ -16,5 +16,5 @@ True of False
 Check if a sgroupr_sgpr is C12
 }
 \examples{
-is_Cyclic_12(Cyclic_12(0:3))
+is_Cyclic_12(Cyclic_12(0:11))
 }

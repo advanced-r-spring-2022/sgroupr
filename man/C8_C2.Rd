@@ -13,8 +13,8 @@ C8_C2(x = integer())
 a sgroupr_sgpr object with group C8_C2
 }
 \description{
-Create a C8_C2 sgroupr_sgrp object
+C8_C2 belongs to the multiplication Group
 }
 \examples{
-C8_C2(0:17)
+C8_C2(0:15)
 }

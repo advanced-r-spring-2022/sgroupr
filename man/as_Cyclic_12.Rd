@@ -16,6 +16,6 @@ An Sgroupr_sgrp group belonging to C12
 Change a vector into object of C12 group
 }
 \examples{
-x <- 0:7
+x <- 0:11
 as_Cyclic_12(x)
 }

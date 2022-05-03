@@ -10,11 +10,11 @@ Dih_6(x = integer())
 \item{x}{An integer vector}
 }
 \value{
-Return an object of sgroupr_sgrp with group Dih_6
+An object of sgroupr_sgrp with group Dih_6
 }
 \description{
-Create a Dih_6 small group of sgroupr_sgrp
+Dih_6 belongs to the dihedral Group
 }
 \examples{
-Dih_6(0:7)
+Dih_6(0:5)
 }

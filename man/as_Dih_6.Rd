@@ -16,6 +16,6 @@ An Sgroupr_sgrp group belonging to Dih_6
 Change a vector into object of Dih_6 group
 }
 \examples{
-x <- 0:7
+x <- 0:5
 as_Dih_6(x)
 }

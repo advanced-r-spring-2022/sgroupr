@@ -16,6 +16,6 @@ True or False
 Test whether x is Dih_6
 }
 \examples{
-x <- Dih_6(0:7)
+x <- Dih_6(0:5)
 is_Dih_6(x)
 }

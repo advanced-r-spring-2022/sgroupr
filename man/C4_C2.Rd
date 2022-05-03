@@ -2,7 +2,7 @@
 % Please edit documentation in R/C4_C2.R
 \name{C4_C2}
 \alias{C4_C2}
-\title{Create a C4C2 sgroupr_sgrp object}
+\title{Create a C4_C2 sgroupr_sgrp object}
 \usage{
 C4_C2(x = integer())
 }
@@ -10,10 +10,10 @@ C4_C2(x = integer())
 \item{x}{An integer vector}
 }
 \value{
-a sgroupr_sgpr object with group C4C2
+a sgroupr_sgpr object with group C4_C2
 }
 \description{
-Create a C4C2 sgroupr_sgrp object
+C4_C2 belongs to the multiplication Group
 }
 \examples{
 C4_C2(0:7)

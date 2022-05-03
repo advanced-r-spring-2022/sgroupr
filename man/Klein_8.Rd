@@ -13,7 +13,7 @@ Klein_8(x = integer())
 a sgroupr_sgpr object with group Klein_8
 }
 \description{
-Create a Klein_8 sgroupr_sgrp object
+Klein_8 belongs to the Klein Group
 }
 \examples{
 Klein_8(0:7)

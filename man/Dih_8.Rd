@@ -10,10 +10,10 @@ Dih_8(x = integer())
 \item{x}{Is an integer vector}
 }
 \value{
-A sgroupr_sgpr object with dihedral group Dih8 (Heisenberg)
+A sgroupr_sgpr object with dihedral group Dih_8 (Heisenberg)
 }
 \description{
-The length of dihedral group Dih8 (Heisenberg) should be 0 to 7
+Dih_8 (Heisenberg) belongs to the dihedral Group
 }
 \examples{
 Dih_8(0:7)

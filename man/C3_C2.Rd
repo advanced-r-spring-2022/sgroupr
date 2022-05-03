@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_C2.R
 \name{C3_C2}
 \alias{C3_C2}
-\title{Create a C3C2 sgroupr_sgrp object}
+\title{Create a C3_C2 sgroupr_sgrp object}
 \usage{
 C3_C2(x = integer())
 }
@@ -10,11 +10,12 @@ C3_C2(x = integer())
 \item{x}{An integer vector}
 }
 \value{
-a sgroupr_sgpr object with group C6C2
+a sgroupr_sgpr object with group C3_C2
 }
 \description{
-Create a C3C2 sgroupr_sgrp object
+C3_C2 belongs to the multiplication Group
 }
 \examples{
 C3_C2(0:5)
+
 }

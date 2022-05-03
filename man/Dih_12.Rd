@@ -2,7 +2,7 @@
 % Please edit documentation in R/Dih_12.R
 \name{Dih_12}
 \alias{Dih_12}
-\title{Helper function of Dih2 group}
+\title{Create a Dih_12 sgroupr_sgrp object}
 \usage{
 Dih_12(x = integer())
 }
@@ -13,7 +13,7 @@ Dih_12(x = integer())
 a Dih_12 sgroupr_sgrp
 }
 \description{
-Helper function of Dih2 group
+Dih_12 belongs to the dihedral Group
 }
 \examples{
 Dih_12(0:11)

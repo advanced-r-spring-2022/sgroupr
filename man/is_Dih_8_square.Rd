@@ -2,7 +2,7 @@
 % Please edit documentation in R/Dih_8_square.R
 \name{is_Dih_8_square}
 \alias{is_Dih_8_square}
-\title{Test whether x is Dih8}
+\title{Test whether x is Dih_8 (Square)}
 \usage{
 is_Dih_8_square(x)
 }
@@ -13,7 +13,7 @@ is_Dih_8_square(x)
 True or False
 }
 \description{
-Test whether x is Dih8
+Test whether x is Dih_8 (Square)
 }
 \examples{
 x <- Dih_8_square(0:7)

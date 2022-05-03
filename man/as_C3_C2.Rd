@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_C2.R
 \name{as_C3_C2}
 \alias{as_C3_C2}
-\title{Change a vector into object of C3C2 group}
+\title{Change a vector into object of C3_C2 group}
 \usage{
 as_C3_C2(x)
 }
@@ -10,10 +10,10 @@ as_C3_C2(x)
 \item{x}{A vector}
 }
 \value{
-An Sgroupr_sgrp group belonging to C3C2
+An Sgroupr_sgrp group belonging to C3_C2
 }
 \description{
-Change a vector into object of C3C2 group
+Change a vector into object of C3_C2 group
 }
 \examples{
 x <- 0:5

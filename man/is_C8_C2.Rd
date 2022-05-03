@@ -16,5 +16,5 @@ True of False
 Check if a sgroupr_sgpr is C8_C2
 }
 \examples{
-is_C8_C2(C8_C2(0:17))
+is_C8_C2(C8_C2(0:15))
 }
