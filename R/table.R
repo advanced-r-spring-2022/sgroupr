@@ -64,6 +64,27 @@ table <- function(x) {
       rownames(table) <- 0:7
       colnames(table) <- 0:7
     },
+    "Q8_C2" = {
+      table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L,
+                        1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L, 9L, 10L, 11L, 8L, 13L, 14L, 15L, 12L,
+                        2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L, 10L, 11L, 8L, 9L, 14L, 15L, 12L, 13L,
+                        3L, 0L, 1L, 2L, 7L, 4L, 5L, 6L, 11L, 8L, 9L, 10L, 15L, 12L, 13L, 14L,
+                        4L, 7L, 6L, 5L, 2L, 1L, 0L, 3L, 11L, 15L, 14L, 12L, 10L, 9L, 8L, 11L,
+                        5L, 4L, 7L, 6L, 3L, 2L, 1L, 0L, 12L, 11L, 15L, 14L, 11L, 10L, 9L, 8L,
+                        6L, 5L, 4L, 7L, 0L, 3L, 2L, 1L, 14L, 12L, 11L, 15L, 8L, 11L, 10L, 9L,
+                        7L, 6L, 5L, 4L, 1L, 0L, 3L, 2L, 15L, 14L, 12L, 11L, 9L, 8L, 11L, 10L,
+                        8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
+                        9L, 10L, 11L, 8L, 13L, 14L, 15L, 12L, 1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L,
+                        10L, 11L, 8L, 9L, 14L, 15L, 12L, 13L, 2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L,
+                        11L, 8L, 9L, 10L, 15L, 12L, 13L, 14L, 3L, 0L, 1L, 2L, 7L, 4L, 5L, 6L,
+                        12L, 15L, 14L, 13L, 10L, 9L, 8L, 11L, 4L, 7L, 6L, 5L, 2L, 1L, 0L, 3L,
+                        13L, 12L, 15L, 14L, 11L, 10L, 9L, 8L, 5L, 4L, 7L, 6L, 3L, 2L, 1L ,0L,
+                        14L, 13L, 12L, 15L, 8L, 11L, 10L, 9L, 6L, 5L, 4L, 7L, 0L, 3L, 2L, 1L,
+                        15L, 14L, 13L, 12L, 9L, 8L, 11L, 10L, 7L, 6L, 5L, 4L, 1L, 0L, 3L, 2L),
+                        nrow = 16, ncol = 16)
+      rownames(table) <- 0:15
+      colnames(table) <- 0:15
+    },
     "Cyclic_16" = {
       table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L,
                         1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L,
