@@ -57,12 +57,13 @@ methods::setOldClass(c("sgroupr_sgrp", "vctrs_vctr"))
 #' Chang a vector into sgroupr_sgrp object
 #' @param x
 #' A sgroupr_sgrp object
-#' @param ...
+#' @param group the group you want to create
+#' @param ... other params
 #' other params
 #' @export
 #' @examples
 #' as_sgrp(c(1L,2L,3L,4L),group = "Dih_6")
-as_sgrp <- function(x, ...) {
+as_sgrp <- function(x, group = NA_character_, ...) {
   UseMethod("as_sgrp")
 }
 
@@ -72,7 +73,7 @@ as_sgrp.default <- function(x, group = NA_character_, ...) {
 }
 
 #' @export
-as_sgrp.character <- function(x, group = NA_character_) {
+as_sgrp.character <- function(x, group = NA_character_, ...) {
   value <- as.integer(x)
   new_sgrp(value, group = group)
 }

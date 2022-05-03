@@ -4,12 +4,15 @@
 \alias{as_sgrp}
 \title{Chang a vector into sgroupr_sgrp object}
 \usage{
-as_sgrp(x, ...)
+as_sgrp(x, group = NA_character_, ...)
 }
 \arguments{
 \item{x}{A sgroupr_sgrp object}
 
-\item{...}{other params}
+\item{group}{the group you want to create}
+
+\item{...}{other params
+other params}
 }
 \description{
 Chang a vector into sgroupr_sgrp object
