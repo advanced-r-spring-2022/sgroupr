@@ -16,5 +16,5 @@ Return an object of sgroupr_sgrp with group K4_C3
 Create a K4_C3 small group of sgroupr_sgrp
 }
 \examples{
-K4_C3(0:7)
+K4_C3(0:11)
 }

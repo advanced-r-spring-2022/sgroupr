@@ -1,7 +1,7 @@
-new_C12 <- function(x = integer()) {
+new_Cyclic_12 <- function(x = integer()) {
   vec_assert(x, integer())
   x[x > 11L | x < 0L] <- NA_integer_
-  new_sgrp(x, group = "C12")
+  new_sgrp(x, group = "Cyclic_12")
 }
 
 #' @title
@@ -11,13 +11,13 @@ new_C12 <- function(x = integer()) {
 #' @return
 #' A Cyclic 12 group of Sgroupr_sgrp object
 #' @examples
-#' x <- C12(0:11)
+#' x <- Cyclic_12(0:11)
 #' @export
-C12<- function(x = integer()) {
+Cyclic_12<- function(x = integer()) {
   # make sure the input data is integral.
   # vec_cast can change the x into the type integer
   x <- vec_cast(x, integer())
-  new_C12(x)
+  new_Cyclic_12(x)
 }
 
 #' @title
@@ -25,11 +25,11 @@ C12<- function(x = integer()) {
 #' @param x An sgroupr_sgpr object
 #' @return True of False
 #' @export
-#' @examples is_C12(C12(0:3))
-is_C12 <- function(x) {
+#' @examples is_Cyclic_12(Cyclic_12(0:3))
+is_Cyclic_12 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
-  if(group(x) == "C12") {
+  if(group(x) == "Cyclic_12") {
     return(!result)
   } else return(result)
 }
@@ -43,7 +43,7 @@ is_C12 <- function(x) {
 #' @export
 #' @examples
 #' x <- 0:7
-#' as_C12(x)
-as_C12 <- function(x) {
-  as_sgrp(x, group = "C12")
+#' as_Cyclic_12(x)
+as_Cyclic_12 <- function(x) {
+  as_sgrp(x, group = "Cyclic_12")
 }

@@ -14,7 +14,7 @@ table <- function(x) {
   table <- matrix()
   switch(
     group(x),
-    "S3" =  {
+    "Dih_6" =  {
       table = rbind(c(0L,1L,2L,3L,4L,5L),
                     c(1L,2L,0L,4L,5L,3L),
                     c(2L,0L,1L,5L,3L,4L),
@@ -98,7 +98,8 @@ table <- function(x) {
       rownames(table) <- 0:7
       colnames(table) <- 0:7
     },
-    "Group_C4_C3" = {
+
+    "C4_C3" = {
       table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L,
                         1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L, 9L, 10L, 11L, 8L,
                         2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L, 10L, 11L, 8L, 9L,
@@ -115,7 +116,7 @@ table <- function(x) {
       rownames(table) <- 0:11
       colnames(table) <- 0:11
     },
-    "C4C2" = {
+    "C4_C2" = {
       table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
                         1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L,
                         2L, 3L, 0L, 1L, 6L, 7L, 4L, 5L,
@@ -128,7 +129,7 @@ table <- function(x) {
       rownames(table) <- 0:7
       colnames(table) <- 0:7
     },
-    "C3C2" = {
+    "C3_C2" = {
       table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L,
                        1L, 2L, 0L, 4L, 5L, 3L,
                        2L, 0L, 1L, 5L, 3L, 4L,
@@ -139,7 +140,7 @@ table <- function(x) {
       rownames(table) <- 0:5
       colnames(table) <- 0:5
     },
-    "C6C2" = {
+    "C6_C2" = {
       table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L,
                        1L, 2L, 3L, 4L, 5L, 0L, 7L, 8L, 9L, 10L, 11L, 6L,
                        2L, 3L, 4L, 5L, 0L, 1L, 8L, 9L, 10L, 11L, 6L, 7L,
@@ -156,7 +157,7 @@ table <- function(x) {
       rownames(table) <- 0:11
       colnames(table) <- 0:11
     },
-    "Klein8" = {
+    "Klein_8" = {
       table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
                        1L, 0L, 3L, 2L, 5L, 4L, 7L, 6L,
                        2L, 3L, 0L, 4L, 6L, 7L, 4L, 5L,
@@ -178,7 +179,20 @@ table <- function(x) {
       rownames(table) <- 0:3
       colnames(table) <- 0:3
     },
-    "Dih8" = {
+    "Dih_8" = {
+      table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
+                        1L, 0L, 3L, 2L, 5L, 4L, 7L, 6L,
+                        2L, 3L, 0L, 1L, 7L, 6L, 5L, 4L,
+                        3L, 2L, 1L, 0L, 6L, 7L, 4L, 5L,
+                        4L, 5L, 6L, 7L, 0L, 1L, 2L, 3L,
+                        5L, 4L, 7L, 6L, 1L, 0L, 3L, 2L,
+                        6L, 7L, 4L, 5L, 3L, 2L, 1L, 0L,
+                        7L, 6L, 5L, 4L, 2L, 3L, 0L, 1L),
+                      nrow = 8, ncol = 8)
+      rownames(table) <- 0:7
+      colnames(table) <- 0:7
+    },
+    "Dih_8_square" = {
       table <- rbind(c(0L,1L,2L,3L,4L,5L,6L,7L),
                      c(1L,2L,3L,0L,5L,6L,7L,4L),
                      c(2L,3L,0L,1L,6L,7L,4L,5L),
@@ -190,7 +204,7 @@ table <- function(x) {
       rownames(table) <- 0:7
       colnames(table) <- 0:7
     },
-    "Dih12" = {
+    "Dih_12" = {
       table <- matrix(c(0L,1L,2L,3L,4L,5L,6L,7L,8L,9L,10L,11L,
                         1L,2L,3L,4L,5L,0L,7L,8L,9L,10L,11L,6L,
                         2L,3L,4L,5L,0L,1L,8L,9L,10L,11L,6L,7L,
@@ -207,7 +221,7 @@ table <- function(x) {
       rownames(table) <- 0:11
       colnames(table) <- 0:11
     },
-    "C12" = {
+    "Cyclic_12" = {
       table <- matrix(c(0L,1L,2L,3L,4L,5L,6L,7L,8L,9L,10L,11L,
                         1L,2L,3L,4L,5L,6L,7L,8L,9L,10L,11L,0L,
                         2L,3L,4L,5L,6L,7L,8L,9L,10L,11L,0L,1L,

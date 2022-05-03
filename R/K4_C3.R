@@ -14,7 +14,7 @@ new_K4_C3 <- function(x = integer()) {
 #' Return an object of sgroupr_sgrp with group K4_C3
 #'
 #' @examples
-#' K4_C3(0:7)
+#' K4_C3(0:11)
 #' @export
 K4_C3 <- function(x = integer()) {
   # make sure the input data is integral.
@@ -30,7 +30,7 @@ K4_C3 <- function(x = integer()) {
 #' @return True or False
 #' @export
 #' @examples
-#' x <- K4_C3(0:7)
+#' x <- K4_C3(0:11)
 #' is_K4_C3(x)
 is_K4_C3 <- function(x) {
   result <- FALSE
@@ -49,7 +49,7 @@ is_K4_C3 <- function(x) {
 #' An Sgroupr_sgrp group belonging to K4_C3
 #' @export
 #' @examples
-#' x <- 0:7
+#' x <- 0:11
 #' as_K4_C3(x)
 as_K4_C3 <- function(x) {
   as_sgrp(x, group = "K4_C3")
