@@ -98,6 +98,7 @@ table <- function(x) {
       rownames(table) <- 0:7
       colnames(table) <- 0:7
     },
+
     "C4_C3" = {
       table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L,
                         1L, 2L, 3L, 0L, 5L, 6L, 7L, 4L, 9L, 10L, 11L, 8L,
