@@ -18,6 +18,45 @@ knitr::opts_chunk$set(
 library(sgroupr)
 ```
 
+## Introduction
+
+This Sgroupr package is built to use/apply some of the finite abelian groups. You can find more information through this link: https://en.wikipedia.org/wiki/List_of_small_groups. 
+
+Two vignettes are contained inside this package. One of them is created to explain how to use the `vtcrs` package based on an example from the finite abelian group. The second vignette described in details how to use the `sgroupr` package. It would be best to first familiarize yourself with the use of the vtcrs package and then read this vignette to understand how to work with the sgroup package.
+
+## Inside each group
+
+For this section, we will use Klein_8 as a reference to demonstrate/illustrate how we built each group.
+To minimize errors and to facilitate the use of the package, each group (element) contains 3 different functions/code to be utilized by the users.
+
+The first function allows the users to see the first row of the matrix following a specific group(element of a group). 
+`Klein_8` as an example an element of the Klein group with a length from 0 to 7. This first function therefore output a sgroupr_sgpr object following Klein_8 based on the given values. 
+
+```{r}
+Klein_8(0:7)
+Cyclic_4(0:3)
+```
+The goal of the second function is to help users checking if a sgroupr_sgpr object belongs or not to the specified group.
+The output should therefore be TRUE or FALSE depending on the value inserted as an input. Based on the example used below, we can see that the function returns TRUE for y and FALSE for u.
+
+```{r}
+# Correct Choice
+y <- Klein_8(0:7)
+is_Klein_8(y)
+#Incorrect choice
+u <- Cyclic_16(0:15)
+is_Klein_8(u)
+```
+The last function allows users to transform numeric/integer value to the specific group. As shown below, the vector containing values from 0 to 7 changes the type of the values inserted.
+
+```{r}
+x <- c(0:7)
+# x is an integer vector
+str(x)
+#After using as_Klein_8, it changes to Klein_8
+str(as_Klein_8(x))
+```
+
 ## There are total 20 different groups that can be use in our sgroup package and each group correspond to one Cayley table. The following shows the group name and its funcion to create the group:
 
 ### Group name - Function name in sgroup package - The length limitation of function

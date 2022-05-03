@@ -1,6 +1,5 @@
 new_Q8_C2 <- function(x = integer()) {
   vec_assert(x, integer())
-  x[x > 15L | x < 0L] <- NA_integer_
   new_sgrp(x, group = "Q8_C2")
 }
 
@@ -10,10 +9,10 @@ new_Q8_C2 <- function(x = integer()) {
 #' @return a sgroupr_sgpr object with group Q8_C2
 #' @export
 #' @examples
-#' Q8C2(0:15)
-Q8C2 <- function(x = integer()) {
+#' Q8_C2(0:15)
+Q8_C2 <- function(x = integer()) {
   x <- vec_cast(x, integer())
-  new_Q8C2(x)
+  new_Q8_C2(x)
 }
 
 #' @title
@@ -21,7 +20,7 @@ Q8C2 <- function(x = integer()) {
 #' @param  x an sgroupr_sgpr object
 #' @return True of False
 #' @export
-#' @examples 
+#' @examples
 #' is_Q8_C2(Q8_C2(0:15))
 is_Q8_C2 <- function(x) {
   result <- FALSE

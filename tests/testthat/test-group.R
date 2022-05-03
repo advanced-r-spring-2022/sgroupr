@@ -298,3 +298,35 @@ test_that("C4_C4", {
   names(test) <- NULL
   expect_equal(as.integer(1L + x),c(test,NA))
 })
+
+test_that("C8_C2", {
+  x <- C8_C2(c(0:16))
+  expect_equal(as.integer(x),c(0:15,NA))
+  expect_equal(attr(x,"group"),"C8_C2")
+  expect_equal(as_C8_C2(0:2), C8_C2(0:2))
+  expect_equal(as_C8_C2(c('0','1','2','3')), C8_C2(0:3))
+  expect_equal(is_C8_C2(x),TRUE)
+  expect_equal(is_C8_C2(Klein_8(0:11)), FALSE)
+  expect_equal(vctrs::vec_c(x,1L), C8_C2(c(0:16,1)))
+  expect_equal(vctrs::vec_cast(x,integer()),c(0L:15L,NA))
+  table <- table(x)
+  test <- table[,2]
+  names(test) <- NULL
+  expect_equal(as.integer(1L + x),c(test,NA))
+})
+
+test_that("Q8_C2", {
+  x <- Q8_C2(0:16)
+  expect_equal(as.integer(x),c(0:15,NA))
+  expect_equal(attr(x,"group"),"Q8_C2")
+  expect_equal(as_Q8_C2(0:2), Q8_C2(0:2))
+  expect_equal(as_Q8_C2(c('0','1','2','3')), Q8_C2(0:3))
+  expect_equal(is_Q8_C2(x),TRUE)
+  expect_equal(is_Q8_C2(Klein_8(0:11)), FALSE)
+  expect_equal(vctrs::vec_c(x,1L), Q8_C2(c(0:16,1)))
+  expect_equal(vctrs::vec_cast(x,integer()),c(0L:15L,NA))
+  table <- table(x)
+  test <- table[,2]
+  names(test) <- NULL
+  expect_equal(as.integer(1L + x),c(test,NA))
+})
