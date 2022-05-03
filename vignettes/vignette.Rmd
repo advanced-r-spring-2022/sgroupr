@@ -59,7 +59,7 @@ There are total 20 different groups that can be use in our sgroup package and ea
 
 Here are the steps that we can use on the group function in the sgroup package. We use cyclic group C8 as an example.
 
-#### 1.Use `Cyclic_8()` to create a Cyclic_8 group. The limitation of group length is the maximum group number - 1 
+#### 1. Use `Cyclic_8()` to create a Cyclic_8 group. The limitation of group length is the maximum group number - 1 
 ```{r}
 x <- Cyclic_8(0:7)
 x
@@ -71,25 +71,57 @@ as_Cyclic_8(0:7)
 as_Cyclic_8(c("0","1","2","3","4","5","6","7"))
 ```
 
-#### 2.Use `is_Cyclic_8()` to check whether the object belongs to the Cyclic_8 group. 
+#### 2. Use `is_Cyclic_8()` to check whether the object belongs to the Cyclic_8 group. 
 ```{r}
 is_Cyclic_8(x)
 ```
 
-#### 3.If you want to double check, you can use `group()` to check the group name 
+#### 3. If you want to double check, you can use `group()` to check the group name 
 ```{r}
 group(x)
 ```
 
-#### 4.Use `table()` to see the Cayley table of the particular group
+
+#### 4. You also have the possibility to check the number of a specific group. Dihedral 6 should only have 6 numbers based on its cayley table with maximum be 5. If an user inputs more than 5 numbers, those numbers should be NA.
+
+```{r}
+check_number(0:5, group = "Dih_6")
+check_number(0:6, group = "Dih_6")
+```
+
+#### 5. If it is also possible to verify if a specific group is inside the sgroupr package. If user inputs something not included, it should throws an error. 
+```{r}
+check_group("Klein_4")
+```
+
+#### 6. You can implicitly change the type of an object (Coercion)
+```{r}
+x <- Dih_6(0:5)
+vctrs::vec_c(x,1L)
+vctrs::vec_c(x,x)
+vctrs::vec_c(1L,x)
+vctrs::vec_c(6L,x)
+```
+
+#### 7. Or you can change the type of the object explicilty (Casting)
+```{r}
+x
+vctrs::vec_cast(x,integer())
+vctrs::vec_cast(c(1L,2L,3L,4L,5L), sgrp(group = "Dih_6"))
+```
+
+
+#### 8. Use `table()` to see the Cayley table of the particular group
 ```{r}
 table(x)
 ```
 
-#### 5.Use can use + operation to do the arithmetic for the group, and based on the number we use, it will return the number + 1 row of the Cayley table. When the number is greater than the total row number, it just starts from the first row. There are three different way to do the arithmetic:
+#### 9. Use can use + operation to do the arithmetic for the group, and based on the number we use, it will return the number + 1 row of the Cayley table. When the number is greater than the total row number, it just starts from the first row. There are three different way to do the arithmetic:
 
 1. number + group
 ```{r}
+x <- Cyclic_8(0:7)
+
 5 + x # it should return row 6 of the Cayley table 
 
 11 + x # it should return row 4 ((11 %% 8) + 1) of the Cayley table 
