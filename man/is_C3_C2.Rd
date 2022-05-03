@@ -2,7 +2,7 @@
 % Please edit documentation in R/C3_C2.R
 \name{is_C3_C2}
 \alias{is_C3_C2}
-\title{Check if a sgroupr_sgpr is C3C2}
+\title{Check if a sgroupr_sgpr is C3_C2}
 \usage{
 is_C3_C2(x)
 }
@@ -13,7 +13,7 @@ is_C3_C2(x)
 True of False
 }
 \description{
-Check if a sgroupr_sgpr is C3C2
+Check if a sgroupr_sgpr is C3_C2
 }
 \examples{
 is_C3_C2(Klein_4(0:5))

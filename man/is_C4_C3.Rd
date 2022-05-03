@@ -2,7 +2,7 @@
 % Please edit documentation in R/C4_C3.R
 \name{is_C4_C3}
 \alias{is_C4_C3}
-\title{Check if a sgroupr_sgpr is Group_C4_C3}
+\title{Check if a sgroupr_sgpr is C4_C3}
 \usage{
 is_C4_C3(x)
 }
@@ -13,7 +13,7 @@ is_C4_C3(x)
 True of False
 }
 \description{
-Check if a sgroupr_sgpr is Group_C4_C3
+Check if a sgroupr_sgpr is C4_C3
 }
 \examples{
 is_C4_C3(C4_C3(0:11))

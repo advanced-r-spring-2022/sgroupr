@@ -16,6 +16,6 @@ An Sgroupr_sgrp group belonging to C6_C2
 Change a vector into object of C6_C2 group
 }
 \examples{
-x <- 0:7
+x <- 0:11
 as_C6_C2(x)
 }

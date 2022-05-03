@@ -13,7 +13,7 @@ Cyclic_12(x = integer())
 A Cyclic 12 group of Sgroupr_sgrp object
 }
 \description{
-Create Cyclic 12 group
+Cyclic 12 belongs to the Cyclic Group
 }
 \examples{
 x <- Cyclic_12(0:11)

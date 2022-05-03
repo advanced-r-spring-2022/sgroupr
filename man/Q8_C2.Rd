@@ -13,7 +13,7 @@ Q8_C2(x = integer())
 a sgroupr_sgpr object with group Q8_C2
 }
 \description{
-Create a Q8_C2 sgroupr_sgrp object
+Q8_C2 belongs to the Multiplication Group
 }
 \examples{
 Q8_C2(0:15)

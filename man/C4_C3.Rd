@@ -2,7 +2,7 @@
 % Please edit documentation in R/C4_C3.R
 \name{C4_C3}
 \alias{C4_C3}
-\title{Create a Group C4*C3 sgroupr_sgrp object}
+\title{Create a Group C4_C3 sgroupr_sgrp object}
 \usage{
 C4_C3(x = integer())
 }
@@ -10,10 +10,10 @@ C4_C3(x = integer())
 \item{x}{Is an integer vector}
 }
 \value{
-A sgroupr_sgpr object with group Cyclic C4*C3
+A sgroupr_sgpr object with group C4_C3
 }
 \description{
-The length of Group C4*C3 should be 0 to 11
+C4_C3 belongs to the multiplication Group
 }
 \examples{
 C4_C3(0:11)

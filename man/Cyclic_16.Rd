@@ -13,7 +13,7 @@ Cyclic_16(x = integer())
 A sgroupr_sgpr object with group Cyclic 16
 }
 \description{
-The length of Cyclic 16 should be 0 to 15
+Cyclic 16 belongs to the Cyclic Group
 }
 \examples{
 Cyclic_16(0:15)

@@ -13,7 +13,7 @@ Dcyclic_8(x = integer())
 a sgroupr_sgpr object with group Dcyclic_8
 }
 \description{
-Create a Dcyclic_8 sgroupr_sgrp object
+Dcyclic 8 belongs to the Dicyclic Group
 }
 \examples{
 Dcyclic_8(0:7)

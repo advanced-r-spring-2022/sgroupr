@@ -1,12 +1,8 @@
 #' @title
 #' Check the number of specific group
-#' @param x
-#' An integer vector
-#' @param group
-#' The group we are going to create
-#'
-#' @return
-#' A vector that change
+#' @param x An integer vector
+#' @param group The group we are going to create
+#' @return A new vector following our conditions 
 #' @export
 #' @examples
 #' check_number(0:7, group = "Dih_6")

@@ -10,7 +10,8 @@ check_group(group)
 \item{group}{The group the small group is}
 }
 \value{
-True if it has constructed and False if it has not constructed.
+True if the specified group is included inside our package and False
+if it has not.
 }
 \description{
 Check if the group has been construct

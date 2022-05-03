@@ -2,7 +2,7 @@
 % Please edit documentation in R/Dih_12.R
 \name{as_Dih_12}
 \alias{as_Dih_12}
-\title{Change a vector into object of Dih8 group}
+\title{Change a vector into object of Dih_12 group}
 \usage{
 as_Dih_12(x)
 }
@@ -10,12 +10,12 @@ as_Dih_12(x)
 \item{x}{A vector}
 }
 \value{
-An Sgroupr_sgrp group belonging to Dih8
+An Sgroupr_sgrp group belonging to Dih_12
 }
 \description{
-Change a vector into object of Dih8 group
+Change a vector into object of Dih_12 group
 }
 \examples{
-x <- 0:7
+x <- 0:11
 as_Dih_12(x)
 }

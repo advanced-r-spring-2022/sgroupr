@@ -10,10 +10,10 @@ K4_C3(x = integer())
 \item{x}{An integer vector}
 }
 \value{
-Return an object of sgroupr_sgrp with group K4_C3
+An object of sgroupr_sgrp with group K4_C3
 }
 \description{
-Create a K4_C3 small group of sgroupr_sgrp
+K4_C3 belongs to the Multiplication Group
 }
 \examples{
 K4_C3(0:11)

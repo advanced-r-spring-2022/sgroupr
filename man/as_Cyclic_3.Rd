@@ -16,6 +16,6 @@ An Sgroupr_sgrp group belonging to Cyclic_3
 Change a vector into object of Cyclic_3 group
 }
 \examples{
-x <- 0:7
+x <- 0:2
 as_Cyclic_3(x)
 }

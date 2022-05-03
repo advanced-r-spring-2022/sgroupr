@@ -1,10 +1,9 @@
 #' @title
 #' Check if the group has been construct
-#' @param group
-#' The group the small group is
-#' @return True if it has constructed and False if it has not constructed.
+#' @param group The group the small group is
+#' @return True if the specified group is included inside our package and False 
+#' if it has not.
 #' @export
-#'
 #' @examples
 #' check_group("Klein_4")
 check_group <- function(group) {

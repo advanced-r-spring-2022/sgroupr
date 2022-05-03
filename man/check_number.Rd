@@ -12,7 +12,7 @@ check_number(x, group)
 \item{group}{The group we are going to create}
 }
 \value{
-A vector that change
+A new vector following our conditions
 }
 \description{
 Check the number of specific group
