@@ -5,6 +5,7 @@ new_Q8_C2 <- function(x = integer()) {
 
 #' @title
 #' Create a Q8_C2 sgroupr_sgrp object
+#' @description Q8_C2 belongs to the Multiplication Group
 #' @param x An integer vector
 #' @return a sgroupr_sgpr object with group Q8_C2
 #' @export
@@ -32,10 +33,8 @@ is_Q8_C2 <- function(x) {
 
 #' @title
 #' Change a vector into object of Q8_C2 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to Q8_C2
+#' @param x A vector
+#' @return An Sgroupr_sgrp group belonging to Q8_C2
 #' @export
 #' @examples
 #' x <- 0:15

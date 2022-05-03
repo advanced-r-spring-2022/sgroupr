@@ -4,6 +4,7 @@ new_C6_C2 <- function(x = integer()) {
 }
 #' @title
 #' Create a C6_C2 sgroupr_sgrp object
+#' @description C6_C2 belongs to the multiplication Group
 #' @param x An integer vector
 #' @return a sgroupr_sgpr object with group C6_C2
 #' @export
@@ -32,13 +33,11 @@ is_C6_C2 <- function(x) {
 
 #' @title
 #' Change a vector into object of C6_C2 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to C6_C2
+#' @param x A vector
+#' @return An Sgroupr_sgrp group belonging to C6_C2
 #' @export
 #' @examples
-#' x <- 0:7
+#' x <- 0:11
 #' as_C6_C2(x)
 as_C6_C2 <- function(x) {
   as_sgrp(x, group = "C6_C2")

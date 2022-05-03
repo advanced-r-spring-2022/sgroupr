@@ -2,21 +2,22 @@ new_C3_C2 <- function(x = integer()) {
   vec_assert(x, integer())
   new_sgrp(x, group = "C3_C2")
 }
-
 #' @title
-#' Create a C3C2 sgroupr_sgrp object
+#' Create a C3_C2 sgroupr_sgrp object
+#' @description C3_C2 belongs to the multiplication Group
 #' @param x An integer vector
-#' @return a sgroupr_sgpr object with group C6C2
+#' @return a sgroupr_sgpr object with group C3_C2
 #' @export
 #' @examples
 #' C3_C2(0:5)
+#' 
 C3_C2 <- function(x = integer()) {
   x <- vec_cast(x, integer())
   new_C3_C2(x)
 }
 
 #' @title
-#' Check if a sgroupr_sgpr is C3C2
+#' Check if a sgroupr_sgpr is C3_C2
 #' @param  x an sgroupr_sgpr object
 #' @return True of False
 #' @export
@@ -31,11 +32,9 @@ is_C3_C2 <- function(x) {
 }
 
 #' @title
-#' Change a vector into object of C3C2 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to C3C2
+#' Change a vector into object of C3_C2 group
+#' @param x A vector
+#' @return An Sgroupr_sgrp group belonging to C3_C2
 #' @export
 #' @examples
 #' x <- 0:5

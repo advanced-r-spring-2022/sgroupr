@@ -6,6 +6,7 @@ new_C4_C4 <- function(x = integer()) {
 
 #' @title
 #' Create a C4_C4 sgroupr_sgrp object
+#' @description C4_C4 belongs to the multiplication Group
 #' @param x An integer vector
 #' @return a sgroupr_sgpr object with group C4_C4
 #' @export
@@ -33,10 +34,8 @@ is_C4_C4 <- function(x) {
 
 #' @title
 #' Change a vector into object of C4_C4 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to C4_C4
+#' @param x A vector
+#' @return An Sgroupr_sgrp group that belongs to C4_C4
 #' @export
 #' @examples
 #' x <- 0:15

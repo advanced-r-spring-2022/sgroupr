@@ -5,6 +5,7 @@ new_Dcyclic_8 <- function(x = integer()) {
 
 #' @title
 #' Create a Dcyclic_8 sgroupr_sgrp object
+#' @description Dcyclic 8 belongs to the Dicyclic Group
 #' @param x An integer vector
 #' @return a sgroupr_sgpr object with group Dcyclic_8
 #' @export
@@ -32,10 +33,8 @@ is_Dcyclic_8 <- function(x) {
 
 #' @title
 #' Change a vector into object of Dcyclic_8 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to Dcyclic_8
+#' @param x A vector
+#' @return An Sgroupr_sgrp group belonging to Dcyclic_8
 #' @export
 #' @examples
 #' x <- 0:7

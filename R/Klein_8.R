@@ -5,6 +5,7 @@ new_Klein_8 <- function(x = integer()) {
 
 #' @title
 #' Create a Klein_8 sgroupr_sgrp object
+#' @description Klein_8 belongs to the Klein Group
 #' @param x An integer vector
 #' @return a sgroupr_sgpr object with group Klein_8
 #' @export
@@ -32,10 +33,8 @@ is_Klein_8 <- function(x) {
 
 #' @title
 #' Change a vector into object of Klein_8 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to Klein_8
+#' @param x A vector
+#' @return An Sgroupr_sgrp group belonging to Klein_8
 #' @export
 #' @examples
 #' x <- 0:7

@@ -6,16 +6,13 @@ new_Cyclic_12 <- function(x = integer()) {
 
 #' @title
 #' Create Cyclic 12 group
-#' @param x
-#' An integer vector
-#' @return
-#' A Cyclic 12 group of Sgroupr_sgrp object
+#' @description Cyclic 12 belongs to the Cyclic Group
+#' @param x An integer vector
+#' @return A Cyclic 12 group of Sgroupr_sgrp object
 #' @examples
 #' x <- Cyclic_12(0:11)
 #' @export
 Cyclic_12<- function(x = integer()) {
-  # make sure the input data is integral.
-  # vec_cast can change the x into the type integer
   x <- vec_cast(x, integer())
   new_Cyclic_12(x)
 }
@@ -25,7 +22,7 @@ Cyclic_12<- function(x = integer()) {
 #' @param x An sgroupr_sgpr object
 #' @return True of False
 #' @export
-#' @examples is_Cyclic_12(Cyclic_12(0:3))
+#' @examples is_Cyclic_12(Cyclic_12(0:11))
 is_Cyclic_12 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
@@ -36,13 +33,11 @@ is_Cyclic_12 <- function(x) {
 
 #' @title
 #' Change a vector into object of C12 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to C12
+#' @param x A vector
+#' @return An Sgroupr_sgrp group belonging to C12
 #' @export
 #' @examples
-#' x <- 0:7
+#' x <- 0:11
 #' as_Cyclic_12(x)
 as_Cyclic_12 <- function(x) {
   as_sgrp(x, group = "Cyclic_12")

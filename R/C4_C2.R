@@ -4,9 +4,10 @@ new_C4_C2 <- function(x = integer()) {
 }
 
 #' @title
-#' Create a C4C2 sgroupr_sgrp object
+#' Create a C4_C2 sgroupr_sgrp object
+#' @description C4_C2 belongs to the multiplication Group
 #' @param x An integer vector
-#' @return a sgroupr_sgpr object with group C4C2
+#' @return a sgroupr_sgpr object with group C4_C2
 #' @export
 #' @examples
 #' C4_C2(0:7)
@@ -31,11 +32,9 @@ is_C4_C2 <- function(x) {
 
 
 #' @title
-#' Change a vector into object of C4C2 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to C4C2
+#' Change a vector into object of C4_C2 group
+#' @param x A vector
+#' @return An Sgroupr_sgrp group that belongs to C4_C2
 #' @export
 #' @examples
 #' x <- 0:7

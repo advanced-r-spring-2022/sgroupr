@@ -6,6 +6,7 @@ new_Cyclic_4 <- function(x = integer()) {
 
 #' @title
 #' Create a Cyclic_4 sgroupr_sgrp object
+#' @description Cyclic 4 belongs to the Cyclic Group
 #' @param x An integer vector
 #' @return a sgroupr_sgpr object with group Cyclic_4
 #' @export
@@ -33,10 +34,8 @@ is_Cyclic_4 <- function(x) {
 
 #' @title
 #' Change a vector into object of Cyclic_4 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to Cyclic_4
+#' @param x A vector
+#' @return An Sgroupr_sgrp group belonging to Cyclic_4
 #' @export
 #' @examples
 #' x <- 0:3

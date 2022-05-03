@@ -1,16 +1,13 @@
 new_C4_C3 <- function(x = integer()) {
-  # check whether the x is integer vector
   vec_assert(x, integer())
-  # For each Cyclic_3 group, the range should be 0:3
-  # create it!
   new_sgrp(x, group = "C4_C3")
 }
 
 #' @title
-#' Create a Group C4*C3 sgroupr_sgrp object
-#' @description The length of Group C4*C3 should be 0 to 11
+#' Create a Group C4_C3 sgroupr_sgrp object
+#' @description C4_C3 belongs to the multiplication Group
 #' @param x Is an integer vector
-#' @return A sgroupr_sgpr object with group Cyclic C4*C3
+#' @return A sgroupr_sgpr object with group C4_C3
 #' @export
 #' @examples
 #' C4_C3(0:11)
@@ -22,11 +19,12 @@ C4_C3 <- function(x = integer()) {
 }
 
 #' @title
-#' Check if a sgroupr_sgpr is Group_C4_C3
+#' Check if a sgroupr_sgpr is C4_C3
 #' @param x An sgroupr_sgpr object
 #' @return True of False
 #' @export
-#' @examples is_C4_C3(C4_C3(0:11))
+#' @examples 
+#' is_C4_C3(C4_C3(0:11))
 is_C4_C3 <- function(x) {
   result <- FALSE
   stopifnot(is_sgrp(x))
@@ -36,11 +34,9 @@ is_C4_C3 <- function(x) {
 }
 
 #' @title
-#' Change a vector into object of Group_C4_C3
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to Group_C4_C3
+#' Change a vector into object of C4_C3
+#' @param x A vector
+#' @return An Sgroupr_sgrp group that belongs to C4_C3
 #' @export
 #' @examples
 #' x <- 0:11

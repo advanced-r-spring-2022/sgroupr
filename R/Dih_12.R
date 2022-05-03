@@ -1,20 +1,17 @@
 new_Dih_12 <- function(x = integer()) {
-  # check whether the x is integer vector
   vctrs::vec_assert(x, integer())
-  # create it!
   new_sgrp(x, group = "Dih_12")
 }
 
 #' @title
-#' Helper function of Dih2 group
+#' Create a Dih_12 sgroupr_sgrp object
+#' @description Dih_12 belongs to the dihedral Group
 #' @param x An integer vector
 #' @return a Dih_12 sgroupr_sgrp
 #' @export
 #' @examples
 #' Dih_12(0:11)
 Dih_12 <- function(x = integer()) {
-  # make sure the input data is integral.
-  # vec_cast can change the x into the type integer
   x <- vec_cast(x, integer())
   new_Dih_12(x)
 }
@@ -36,14 +33,12 @@ is_Dih_12 <- function(x) {
 }
 
 #' @title
-#' Change a vector into object of Dih8 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to Dih8
+#' Change a vector into object of Dih_12 group
+#' @param x A vector
+#' @return An Sgroupr_sgrp group belonging to Dih_12
 #' @export
 #' @examples
-#' x <- 0:7
+#' x <- 0:11
 #' as_Dih_12(x)
 as_Dih_12 <- function(x) {
   as_sgrp(x, group = "Dih_12")

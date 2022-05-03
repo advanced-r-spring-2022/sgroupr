@@ -1,16 +1,12 @@
 new_cyclic_8 <- function(x = integer()) {
-  # check whether the x is integer vector
   vec_assert(x, integer())
-  # For each Cyclic_3 group, the range should be 0:3
   x[x > 8L | x < 0L] <- NA_integer_
-  # create it!
   new_sgrp(x, group = "Cyclic_8")
 }
 
 #' @title
 #' Create a Cyclic 8 sgroupr_sgrp object
-#'
-#' @description The length of Cyclic 8 should be 0 to 7
+#' @description Cyclic 8 belongs to the Cyclic Group
 #' @param x Is an integer vector
 #' @return A sgroupr_sgpr object with group Cyclic 8
 #' @export
@@ -39,10 +35,8 @@ is_Cyclic_8 <- function(x) {
 
 #' @title
 #' Change a vector into object of Cyclic 8 group
-#' @param x
-#' A vector
-#' @return
-#' An Sgroupr_sgrp group belonging to Cyclic 8
+#' @param x A vector
+#' @return An Sgroupr_sgrp group belonging to Cyclic 8
 #' @export
 #' @examples
 #' x <- 0:7
