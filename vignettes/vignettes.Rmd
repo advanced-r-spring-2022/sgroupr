@@ -1,0 +1,81 @@
+---
+title: "vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(sgroupr)
+```
+
+## There are total 20 different groups that can be use in our sgroup package and each group correspond to one Cayley table. The following shows the group name and its funcion to create the group:
+
+### Group name - Function name in sgroup package - The length limitation of function
+
+#### Cyclic Group
+cyclic group C3 - `Cyclic_3` `as_Cyclic_3`     - 0:2
+cyclic group C4 - `Cyclic_4` `as_Cyclic_4`     - 0:3
+cyclic group C6 - `Cyclic_6` `as_Cyclic_6`     - 0:5
+cyclic group C8 - `Cyclic_8` `as_Cyclic_8`     - 0:7
+cyclic group C12 - `Cyclic_12` `as_Cyclic_12` - 0:11
+cyclic group C16 - `Cyclic_16` `as_Cyclic_16` - 0:15
+
+#### Klein Group
+Klein group K4 - `Klein_4` `as_Klein_4` - 0:3
+Klein group K8 - `Klein_8` `as_Klein_8` - 0:7
+
+#### Multiplication Group
+group C3xC2 - `C3_C2` `as_C3_C2` - 0:5
+group C4xC2 - `C4_C2` `as_C4_C2` - 0:7
+group C4xC3 - `C4_C3` `as_C4_C3` - 0:11
+group C6xC2 - `C6_C2` `as_C6_C2` - 0:11
+group K4xC3 - `K4_C3` `as_K4_C3` - 0:11
+group C4xC4 - `C4_C4` `as_C4_C4` - 0:15
+
+#### Dihedral Group
+symmetric group S3,dihedral Dih6 (triangle) - `Dih_6` `as_Dih_6`            - 0:5
+dihedral group Dih8 (square) - `Dih_8_square` `as_Dih_8_square`             - 0:7
+dihedral group Dih8 (Heisenberg) - `Dih_8_heisenberg` `as_Dih_8_heisenberg` - 0:7
+dihedral group Dih12 - `Dih_12` `as_Dih_12`                                 - 0:11
+
+
+Here are the steps that we can use on the group function in the sgroup package. We use cyclic group C8 as an example.
+
+# 1.Use `Cyclic_8()` to create a Cyclic_8 group. The limitation of group length is the maximum group number - 1 
+```{r}
+x <- Cyclic_8(0:7)
+x
+```
+
+# Or you can use `as_Cyclic_8()` to create a Cyclic_8 group. The difference is you can use the character inside `as_Cyclic_8()`
+```{r}
+as_Cyclic_8(0:7)
+as_Cyclic_8(c("0","1","2","3","4","5","6","7"))
+```
+
+# 2.We can use `group()` to check the group name 
+```{r}
+group(x)
+```
+
+# 3.Use `table()` to see the Cayley table of the particular group
+```{r}
+table(x)
+```
+
+# 4.Use can use + operation to do the arithmetic for the group, and based on the number we use, it will return the number + 1 row of the Cayley table. When the number is greater than the total row number, it just starts from the first row.
+```{r}
+5 + x # it should return row 6 of the Cayley table 
+
+11 + x # it should return row 4 ((11 %% 8) + 1) of the Cayley table 
+```
