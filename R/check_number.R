@@ -22,7 +22,7 @@ check_number <- function(x,group) {
     x[x > 3L | x < 0L] <- NA_integer_
   } else if(group %in% c("Dih_6","Cyclic_6","C3_C2")) {
     x[x > 5L | x < 0L] <- NA_integer_
-  } else if(setequal(group,"Cyclic_16")) {
+  } else if(group %in% c("Cyclic_16","C4_C4")) {
     x[x > 15L | x< 0L] <- NA_integer_
   } else if(setequal(group,"Cyclic_3")) {
     x[x > 2L | x< 0L] <- NA_integer_
