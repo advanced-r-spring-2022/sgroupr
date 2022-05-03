@@ -156,6 +156,27 @@ table <- function(x) {
       rownames(table) <- 0:11
       colnames(table) <- 0:11
     },
+    "C8C2" = {
+      table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L,
+                        1L, 2L, 3L, 4L, 5L, 6L, 7L, 0L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L,
+                        2L, 3L, 4L, 5L, 6L, 7L, 0L, 1L, 10L, 11L, 12L, 13L, 14L, 15L, 8L, 9L,
+                        3L, 4L, 5L, 6L, 7L, 0L, 1L, 2L, 11L, 12L, 13L, 14L, 15L, 8L, 9L, 10L,
+                        4L, 5L, 6L, 7L, 0L, 1L, 2L, 3L, 12L, 13L, 14L, 15L, 8L, 9L, 10L, 11L,
+                        5L, 6L, 7L, 0L, 1L, 2L, 3L, 4L, 13L, 14L, 15L, 8L, 9L, 10L, 11L, 12L, 
+                        6L, 7L, 0L, 1L, 2L, 3L, 4L, 5L, 14L, 15L, 8L, 9L, 10L, 11L, 12L, 13L,
+                        7L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 15L, 8L, 9L, 10L, 11L, 12L, 13L, 14L,
+                        8L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
+                        9L, 10L, 11L, 12L, 13L, 14L, 15L, 8L, 1L, 2L, 3L, 4L, 5L, 6L, 7L, 0L,
+                        10L, 11L, 12L, 13L, 14L, 15L, 8L, 9L, 2L, 3L, 4L, 5L, 6L, 7L, 0L, 1L,
+                        11L, 12L, 13L, 14L, 15L, 8L, 9L, 10L, 3L, 4L, 5L, 6L, 7L, 0L, 1L, 2L,
+                        12L, 13L, 14L, 15L, 8L, 9L, 10L, 11L, 4L, 5L, 6L, 7L, 0L, 1L, 2L, 3L,
+                        13L, 14L, 15L, 8L, 9L, 10L, 11L, 12L, 5L, 6L, 7L, 0L, 1L, 2L, 3L, 4L,
+                        14L, 15L, 8L, 9L, 10L, 11L, 12L, 13L, 6L, 7L, 0L, 1L, 2L, 3L, 4L, 5L,
+                        15L, 8L, 9L, 10L, 11L, 12L, 13L, 14L, 7L, 0L, 1L, 2L, 3L, 4L, 5L, 6L), 
+                      nrow = 8, ncol = 8)
+      rownames(table) <- 0:15
+      colnames(table) <- 0:15
+    },
     "Klein8" = {
       table <- matrix(c(0L, 1L, 2L, 3L, 4L, 5L, 6L, 7L,
                        1L, 0L, 3L, 2L, 5L, 4L, 7L, 6L,

@@ -33,25 +33,25 @@ The first function allows the users to see the first row of the matrix following
 `Klein_8` as an example an element of the Klein group with a length from 0 to 7. This first function therefore output a sgroupr_sgpr object following Klein_8 based on the given values. 
 
 ```{r}
-Klein_8(0:8)
-Cyclic_4(1:4)
+Klein_8(0:7)
+Cyclic_4(0:3)
 ```
-
 The goal of the second function is to help users checking if a sgroupr_sgpr object belongs or not to the specified group.
 The output should therefore be TRUE or FALSE depending on the value inserted as an input. Based on the example used below, we can see that the function returns TRUE for y and FALSE for u.
+
 ```{r}
 # Correct Choice
-y <- Klein_8(1:7)
+y <- Klein_8(0:7)
 is_Klein_8(y)
 
 #Incorrect choice
 u <- Cyclic_16(0:15)
 is_Klein_8(u)
 ```
+The last function allows users to transform numeric/integer value to the specific group. As shown below, the vector containing values from 0 to 7 changes the type of the values inserted.
 
-The last function allows users to transform numeric/integer value to the specific group. As shown below, the vector containing values from 1 to 7 changes the type of the values inserted.
 ```{r}
-x <- c(1:7)
+x <- c(0:7)
 # x is an integer vector
 str(x)
 #After using as_Klein_8, it changes to Klein_8
