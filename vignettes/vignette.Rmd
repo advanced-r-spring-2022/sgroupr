@@ -40,7 +40,7 @@ There are total 20 different groups that can be use in our sgroup package and ea
 - Klein group K4 - `Klein_4` `as_Klein_4` - 0:3
 - Klein group K8 - `Klein_8` `as_Klein_8` - 0:7
 
-#### Multiplication Group
+#### Extension Group
 - group C3xC2 - `C3_C2` `as_C3_C2` - 0:5
 - group C4xC2 - `C4_C2` `as_C4_C2` - 0:7
 - group C4xC3 - `C4_C3` `as_C4_C3` - 0:11
