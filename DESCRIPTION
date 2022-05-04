@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: 
      c(person(given = "Hanwei", 
              family = "Hu",
-             role = c("aut"),
+             role = c("aut", "cre"),
              email = "hh2182a@student.american.edu",
              comment = c(ORCID = "0000-0002-2173-3700")),
       person(given = "Karene", 
@@ -17,10 +17,10 @@ Authors@R:
              email = "cl6076a@student.american.edu"),
       person(given = "David",
              family = "Gerard",
-             role = c("aut", "cre"),
+             role = c("ctb"),
              email = "gerard.1787@gmail.com",
              comment = c(ORCID = "0000-0001-9450-5023")))
-Description: This Sgroupr package is built to use some of the finite abelian groups. 
+Description: This sgroupr package is built to use some of the finite abelian groups. 
     You can find more information through this link: https://en.wikipedia.org/wiki/List_of_small_groups.
     There are total 20 different groups that can be use in our sgroup package and 
     each group corresponds to one Cayley table.

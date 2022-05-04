@@ -77,3 +77,8 @@ as_sgrp.character <- function(x, group = NA_character_, ...) {
   value <- as.integer(x)
   new_sgrp(value, group = group)
 }
+
+## just to get rid of a cran note
+dummy <- function() {
+  methods::is(TRUE, "logical")
+}

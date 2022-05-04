@@ -6,16 +6,20 @@
 \alias{sgroupr-package}
 \title{Internal vctrs methods}
 \description{
-This Sgroupr package is built to use some of the finite abelian groups. You can find more information through this link: https://en.wikipedia.org/wiki/List_of_small_groups. There are total 20 different groups that can be use in our sgroup package and each group corresponds to one Cayley table.
+This sgroupr package is built to use some of the finite abelian groups. You can find more information through this link: https://en.wikipedia.org/wiki/List_of_small_groups. There are total 20 different groups that can be use in our sgroup package and each group corresponds to one Cayley table.
 }
 \author{
-\strong{Maintainer}: David Gerard \email{gerard.1787@gmail.com} (\href{https://orcid.org/0000-0001-9450-5023}{ORCID})
+\strong{Maintainer}: Hanwei Hu \email{hh2182a@student.american.edu} (\href{https://orcid.org/0000-0002-2173-3700}{ORCID})
 
 Authors:
 \itemize{
-  \item Hanwei Hu \email{hh2182a@student.american.edu} (\href{https://orcid.org/0000-0002-2173-3700}{ORCID})
   \item Karene MatoKa \email{km2259a@student.american.edu}
   \item Chi-Lin Lin \email{cl6076a@student.american.edu}
+}
+
+Other contributors:
+\itemize{
+  \item David Gerard \email{gerard.1787@gmail.com} (\href{https://orcid.org/0000-0001-9450-5023}{ORCID}) [contributor]
 }
 
 }
