@@ -56,7 +56,6 @@ There are total 20 different groups that can be use in our sgroup package and ea
 - dihedral group Dih8 (Heisenberg) - `Dih_8_heisenberg` `as_Dih_8_heisenberg` - 0:7
 - dihedral group Dih12 - `Dih_12` `as_Dih_12`                                 - 0:11
 
-
 Here are the steps that we can use on the group function in the sgroup package. We use cyclic group C8 as an example.
 
 #### 1. Use `Cyclic_8()` to create a Cyclic_8 group. The limitation of group length is the maximum group number - 1 
